@@ -8,13 +8,16 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="314dp"
-        android:layout_height="434dp"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginBottom="326dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
