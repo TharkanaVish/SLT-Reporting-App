@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/drawable/border.xml" value="0.2703125" />
         <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/drawable/logo.xml" value="0.2703125" />
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/drawable/textborder.xml" value="0.2703125" />
         <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/layout/activity_main2.xml" value="0.13020833333333334" />
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/layout/activity_mainpage.xml" value="0.25271739130434784" />
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Sliit/SLT-Reporting-App/app/src/main/res/layout/activity_registeruser.xml" value="0.2" />
       </map>
     </option>
   </component>

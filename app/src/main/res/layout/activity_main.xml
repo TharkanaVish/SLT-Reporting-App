@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/Main"
         android:layout_width="314dp"
         android:layout_height="434dp"
         app:layout_constraintBottom_toBottomOf="parent"
