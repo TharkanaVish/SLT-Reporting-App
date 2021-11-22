@@ -15,11 +15,20 @@ public class Mainpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
         registermain=findViewById(R.id.registermain);
+        loginmain = findViewById(R.id.loginmain);
+
         registermain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Mainpage.this, Register.class));
 
+            }
+        });
+
+        loginmain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Mainpage.this, Login.class));
             }
         });
     }
