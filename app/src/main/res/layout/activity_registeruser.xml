@@ -25,8 +25,8 @@
 
     <View
         android:id="@+id/textView2"
-        android:layout_width="470dp"
-        android:layout_height="510dp"
+        android:layout_width="398dp"
+        android:layout_height="451dp"
         android:background="@drawable/border"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
