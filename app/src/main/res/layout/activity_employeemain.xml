@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Employeemain">
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/textborder"
+        android:onClick="view"
+        android:text="View Added Reports"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426"
+        tools:ignore="OnClick" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="195dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/logo" />
+
+    <View
+        android:id="@+id/textView2"
+        android:layout_width="325dp"
+        android:layout_height="503dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736" />
+
+    <Button
+        android:id="@+id/report"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/textborder"
+        android:onClick="report"
+        android:text="Report Breakdown"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/message"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/textborder"
+        android:onClick="message"
+        android:text="Supervisor Messages"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/textborder"
+        android:onClick="profile"
+        android:text="View Profile"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/tasks"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/textborder"
+        android:onClick="tasks"
+        android:text="Assign Tasks"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847"
+        tools:ignore="OnClick" />
+</androidx.constraintlayout.widget.ConstraintLayout>
