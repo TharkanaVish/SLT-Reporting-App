@@ -25,15 +25,14 @@
 
     <View
         android:id="@+id/textView2"
-        android:layout_width="350dp"
-        android:layout_height="476dp"
+        android:layout_width="470dp"
+        android:layout_height="510dp"
         android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/textView"
@@ -59,12 +58,12 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         app:backgroundTint="#6cbfb0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.586"
         tools:ignore="OnClick" />
 
     <TextView
@@ -240,8 +239,8 @@
 
     <EditText
         android:id="@+id/eno"
-        android:layout_width="175dp"
-        android:layout_height="46dp"
+        android:layout_width="188dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -249,10 +248,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254"
+        app:layout_constraintVertical_bias="0.258"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
