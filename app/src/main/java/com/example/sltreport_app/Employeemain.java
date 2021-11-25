@@ -27,5 +27,12 @@ public class Employeemain extends AppCompatActivity {
                 startActivity(new Intent(Employeemain.this, ViewEmpProfile.class));
             }
         });
+
+        tasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Employeemain.this, AssignedTasks.class));
+            }
+        });
     }
 }
