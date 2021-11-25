@@ -54,15 +54,15 @@
         android:textColor="#000000"
         app:backgroundTint="#6cbfb0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755"
+        app:layout_constraintVertical_bias="0.758"
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/loginmain"
+        android:id="@+id/Mainpage_login"
         android:layout_width="296dp"
         android:layout_height="56dp"
         android:background="@drawable/textborder"
@@ -72,10 +72,11 @@
         android:textColor="#000000"
         app:backgroundTint="#6cbfb0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598"
+        app:layout_constraintVertical_bias="0.61"
         tools:ignore="OnClick" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

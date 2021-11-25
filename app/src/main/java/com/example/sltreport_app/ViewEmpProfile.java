@@ -7,22 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
-
-    Button loginbtn,clickherebtn;
+public class ViewEmpProfile extends AppCompatActivity {
+    Button editEmp,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_view_emp_profile);
 
-        loginbtn = findViewById(R.id.login_btn);
-        clickherebtn = findViewById(R.id.login_frgetPwd_btn);
+        editEmp = findViewById(R.id.btn_viewEmp_editEmp);
+        back = findViewById(R.id.btn_viewEmp_bck);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this, Employeemain.class));
+                startActivity(new Intent(ViewEmpProfile.this, Employeemain.class));
             }
         });
     }
