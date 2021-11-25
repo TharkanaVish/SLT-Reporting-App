@@ -30,7 +30,7 @@
         android:id="@+id/textView_ViewEmployee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" View Proile"
+        android:text="   View Profile"
         android:textAllCaps="false"
         android:textSize="34sp" />
 
@@ -52,10 +52,11 @@
             android:id="@+id/tv_viewEmp_Empno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
             android:layout_marginTop="36dp"
-            android:text="Employee Number :"
+            android:text="Employee No:"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
@@ -67,6 +68,7 @@
             android:layout_marginLeft="97dp"
             android:layout_marginTop="76dp"
             android:text="Name :"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
@@ -78,6 +80,7 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="116dp"
             android:text="Email :"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
@@ -85,10 +88,11 @@
             android:id="@+id/tv_viewEmp_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="156dp"
             android:text="Number :"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
@@ -96,16 +100,17 @@
             android:id="@+id/tv_viewEmp_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="71dp"
-            android:layout_marginLeft="71dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
             android:layout_marginTop="196dp"
             android:text="Username :"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
         <EditText
             android:id="@+id/et_viewEmp_empno"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
@@ -117,7 +122,7 @@
 
         <EditText
             android:id="@+id/et_viewEmp_empname"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
@@ -129,7 +134,7 @@
 
         <EditText
             android:id="@+id/et_viewEmp_empemail"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
@@ -141,19 +146,20 @@
 
         <EditText
             android:id="@+id/et_viewEmp_empphnumber"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="150dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:phoneNumber="true"
             app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_number"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
         <EditText
             android:id="@+id/et_viewEmp_empusname"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
