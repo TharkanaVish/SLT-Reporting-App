@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Mainpage extends AppCompatActivity {
-    Button registermain,loginmain;
+    Button registermain,login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
         registermain=findViewById(R.id.registermain);
-        loginmain = findViewById(R.id.loginmain);
+        login = findViewById(R.id.loginmain);
 
         registermain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,7 +25,7 @@ public class Mainpage extends AppCompatActivity {
             }
         });
 
-        loginmain.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Mainpage.this, Login.class));
