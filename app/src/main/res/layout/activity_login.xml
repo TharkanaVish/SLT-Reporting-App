@@ -31,7 +31,7 @@
         android:id="@+id/textview_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="      Login"
         android:textSize="34sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -142,7 +142,7 @@
             android:layout_width="221dp"
             android:layout_height="38dp"
             android:layout_marginBottom="16dp"
-            android:background="#05CACA"
+            android:background="#6cbfb0"
             android:text="Login"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
