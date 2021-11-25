@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AssignedTasks"></activity>
+        <activity android:name=".Login"></activity>
+        <activity android:name=".Employeemain"></activity>
         <activity android:name=".ViewEmpProfile" />
         <activity
             android:name=".Register"
