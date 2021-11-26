@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name=".AssignedTasks"/>
+        <activity android:name=".Employeemain"/>
+        <activity android:name=".Login"/>
+        <activity android:name=".ViewEmpProfile"/>
+        <activity android:name=".Reportbreakdown"/>
         <activity
             android:name=".Register"
             android:exported="true" />
