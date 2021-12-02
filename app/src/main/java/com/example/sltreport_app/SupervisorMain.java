@@ -21,6 +21,13 @@ public class SupervisorMain extends AppCompatActivity {
         sprofile = findViewById(R.id.btn_profile_smain);
         stask = findViewById(R.id.btn_assigntask_smain);
 
+        sreport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SupervisorMain.this, Reportbreakdown.class));
+            }
+        });
+
         sprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
