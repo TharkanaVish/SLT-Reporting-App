@@ -30,7 +30,8 @@
         android:id="@+id/textView_ViewEmployee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="   View Profile"
+        android:gravity="center"
+        android:text="View Profile"
         android:textAllCaps="false"
         android:textSize="34sp" />
 
@@ -176,9 +177,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="308dp"
-            android:background="#6cbfb0"
+            android:background="@drawable/textborder"
             android:text="Edit Profile"
             android:textStyle="bold"
+            app:backgroundTint="#6cbfb0"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
@@ -189,9 +191,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="384dp"
-            android:background="#6cbfb0"
+            android:background="@drawable/textborder"
             android:text="Back"
             android:textStyle="bold"
+            app:backgroundTint="#6cbfb0"
             app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
             app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
