@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,74 +9,54 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="367dp"
-        android:layout_height="217dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_width="351dp"
+        android:layout_height="158dp"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/logo" />
 
     <View
         android:id="@+id/textView2"
         android:layout_width="347dp"
-        android:layout_height="259dp"
-        android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        android:layout_height="280dp"
+        android:layout_below="@id/textView11"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/border" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="SLT Reporting App"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
-
-    <Button
-        android:id="@+id/registermain"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/textborder"
-        android:onClick="Signup"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        app:backgroundTint="#6cbfb0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758"
-        tools:ignore="OnClick" />
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/Mainpage_login"
         android:layout_width="296dp"
         android:layout_height="56dp"
+        android:layout_below="@id/textView11"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="119dp"
         android:background="@drawable/textborder"
-        android:onClick="Signup"
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="#000000"
-        app:backgroundTint="#6cbfb0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61"
-        tools:ignore="OnClick" />
+        app:backgroundTint="#6cbfb0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/registermain"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/Mainpage_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:background="@drawable/textborder"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:backgroundTint="#6cbfb0" />
+
+</RelativeLayout>
