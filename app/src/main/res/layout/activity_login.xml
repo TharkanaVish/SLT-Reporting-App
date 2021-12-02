@@ -31,7 +31,10 @@
         android:id="@+id/textview_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="      Login"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center"
+        android:text="Login"
         android:textSize="34sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,11 +45,11 @@
             android:id="@+id/textView_lgborder"
             android:layout_width="326dp"
             android:layout_height="435dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42.5dp"
+            android:layout_marginLeft="42.5dp"
             android:layout_marginTop="31dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginRight="43dp"
+            android:layout_marginEnd="42.5dp"
+            android:layout_marginRight="42.5dp"
             android:background="@drawable/border"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
