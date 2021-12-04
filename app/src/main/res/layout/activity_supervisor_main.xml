@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imgv_supervisor_main"
         android:layout_width="246dp"
-        android:layout_height="114dp"
+        android:layout_height="145dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
