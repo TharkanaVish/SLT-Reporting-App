@@ -28,6 +28,13 @@ public class SupervisorMain extends AppCompatActivity {
             }
         });
 
+        sviewreport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SupervisorMain.this, ViewReportsEdit.class));
+            }
+        });
+
         sprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
