@@ -22,6 +22,12 @@ public class Employeemain extends AppCompatActivity {
         eprofile = findViewById(R.id.btn_profile_emain);
         etask = findViewById(R.id.btn_assigntask_emain);
 
+        ereport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Employeemain.this, Reportbreakdown.class));
+            }
+        });
 
         eprofile.setOnClickListener(new View.OnClickListener() {
             @Override
