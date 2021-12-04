@@ -42,8 +42,8 @@
 
         <TextView
             android:id="@+id/textView_lgborder"
-            android:layout_width="346dp"
-            android:layout_height="558dp"
+            android:layout_width="348dp"
+            android:layout_height="567dp"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
             android:layout_marginTop="31dp"
@@ -55,6 +55,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_viewReport_bck"
+            android:layout_width="299dp"
+            android:layout_height="44dp"
+            android:background="@drawable/textborder"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="#6cbfb0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.971"
+            tools:ignore="OnClick,TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/et_town"
@@ -95,9 +112,10 @@
             app:backgroundTint="#6cbfb0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.935"
+            app:layout_constraintVertical_bias="0.862"
             tools:ignore="OnClick,TouchTargetSizeCheck" />
 
         <Button
@@ -107,10 +125,10 @@
             android:text="Add Image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintHorizontal_bias="0.624"
             app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
             app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.766" />
+            app:layout_constraintVertical_bias="0.737" />
 
         <Button
             android:id="@+id/btn_addlocation"
@@ -184,10 +202,10 @@
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintHorizontal_bias="0.096"
             app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
             app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.74" />
+            app:layout_constraintVertical_bias="0.713" />
 
         <EditText
             android:id="@+id/et_description"
