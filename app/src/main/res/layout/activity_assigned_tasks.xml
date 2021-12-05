@@ -30,7 +30,8 @@
         android:id="@+id/tv_assgnedtsk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="  Assigened Tasks"
+        android:gravity="center"
+        android:text="Assigened Tasks"
         android:textSize="34sp" />
 
     <ListView
