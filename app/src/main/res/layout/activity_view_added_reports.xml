@@ -33,11 +33,78 @@
         android:layout_below="@id/tv_added_reports"
         android:layout_marginTop="-1dp">
 
-
-        <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_view_added_report_1"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/imgv_supervisor_main"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 1\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_view_added_report_2"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 2\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_view_added_report_3"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 3\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_view_added_report_4"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 4\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_view_added_report_5"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 5\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_view_added_report_6"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 6\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp"/>
+        </LinearLayout>
     </ScrollView>
 
 
