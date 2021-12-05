@@ -36,192 +36,255 @@
         android:text="View Report"
         android:textSize="24sp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView_lgborder"
-            android:layout_width="348dp"
-            android:layout_height="567dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="42dp"
-            android:layout_marginTop="31dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginRight="43dp"
-            android:background="@drawable/border"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/btn_viewReport_bck"
-            android:layout_width="299dp"
-            android:layout_height="44dp"
-            android:background="@drawable/textborder"
-            android:text="Back"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            app:backgroundTint="#6cbfb0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.971"
-            tools:ignore="OnClick,TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/et_town"
-            android:layout_width="189dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:hint="Town Name"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.053"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/et_vilage"
-            android:layout_width="189dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:hint="Village/Road Name"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.165"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/btn_editbreakdown"
-            android:layout_width="299dp"
-            android:layout_height="44dp"
-            android:background="@drawable/textborder"
-            android:text="Edit Breakdown"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            app:backgroundTint="#6cbfb0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.862"
-            tools:ignore="OnClick,TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/btn_addimage"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.624"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.737" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btn_addlocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Location"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.691"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.619" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_town"
-            android:layout_width="78dp"
-            android:layout_height="32dp"
-            android:text="Town : "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.212"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.053" />
+                <TextView
+                    android:id="@+id/textView_lgborder"
+                    android:layout_width="348dp"
+                    android:layout_height="700dp"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginEnd="43dp"
+                    android:layout_marginRight="43dp"
+                    android:background="@drawable/border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/tv_village"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:text="Village/Road : "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.176" />
+                <Button
+                    android:id="@+id/btn_viewReport_bck"
+                    android:layout_width="299dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/textborder"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.971"
+                    tools:ignore="OnClick,TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:text="Description : "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.289" />
+                <EditText
+                    android:id="@+id/et_town"
+                    android:layout_width="189dp"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:hint="Town Name"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.053"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/tv_gps"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:text="GPS Location : "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.598" />
+                <EditText
+                    android:id="@+id/et_vilage"
+                    android:layout_width="189dp"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:hint="Village/Road Name"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.165"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/tv_image"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:text="Add Image : "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.096"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.713" />
+                <Button
+                    android:id="@+id/btn_editbreakdown"
+                    android:layout_width="299dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/textborder"
+                    android:text="Edit Breakdown"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.895"
+                    tools:ignore="OnClick,TouchTargetSizeCheck" />
 
-        <EditText
-            android:id="@+id/et_description"
-            android:layout_width="183dp"
-            android:layout_height="145dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.914"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-            app:layout_constraintVertical_bias="0.37"
-            tools:ignore="SpeakableTextPresentCheck" />
+                <Button
+                    android:id="@+id/btn_addimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.604"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.599" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_add_completed_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.604"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.696" />
+
+                <Button
+                    android:id="@+id/btn_addlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Location"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.668"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.504" />
+
+                <TextView
+                    android:id="@+id/tv_town"
+                    android:layout_width="78dp"
+                    android:layout_height="32dp"
+                    android:text="Town : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.212"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.053" />
+
+                <TextView
+                    android:id="@+id/tv_village"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Village/Road : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.176" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Description : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.258" />
+
+                <TextView
+                    android:id="@+id/tv_gps"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="GPS Location : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.505" />
+
+                <TextView
+                    android:id="@+id/tv_image"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Add Image : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.598" />
+
+                <TextView
+                    android:id="@+id/tv_completed_image"
+                    android:layout_width="127dp"
+                    android:layout_height="51dp"
+                    android:text="Add Completed Image : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.081"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.694" />
+
+                <TextView
+                    android:id="@+id/tv_assign_super"
+                    android:layout_width="127dp"
+                    android:layout_height="51dp"
+                    android:text="Assign Supervisor : "
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.081"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.802" />
+
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="183dp"
+                    android:layout_height="145dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.878"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.311"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Spinner
+                    android:id="@+id/sp_assign_super"
+                    android:layout_width="172dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_editbreakdown"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.545"
+                    app:layout_constraintStart_toEndOf="@+id/tv_assign_super"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:entries="@array/Supervisors_List"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

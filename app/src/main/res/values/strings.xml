@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">SLT Report-app</string>
     <string name="todo">TODO</string>
+    <string-array name="Supervisors_List">
+        <item>Spervisor one</item>
+        <item>Spervisor two</item>
+        <item>Spervisor three</item>
+        <item>Spervisor four</item>
+        <item>Spervisor five</item>
+        <item>Spervisor six</item>
+        <item>Spervisor seven</item>
+        <item>Spervisor eight</item>
+        <item>Spervisor nine</item>
+        <item>Spervisor ten</item>
+    </string-array>
 </resources>
