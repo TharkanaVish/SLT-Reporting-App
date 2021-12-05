@@ -104,6 +104,17 @@
                 android:gravity="center|center_vertical"
                 android:text="Report Number 6\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
                 android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_view_added_report_7"
+                android:layout_width="338dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:gravity="center|center_vertical"
+                android:text="Report Number 7\nDate = 2021/12/01 \nTime : 9.30am \n Town : Test Town"
+                android:textSize="16sp"/>
         </LinearLayout>
     </ScrollView>
 

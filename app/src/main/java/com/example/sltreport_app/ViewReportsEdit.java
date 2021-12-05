@@ -32,7 +32,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         superlist = findViewById(R.id.sp_assign_super);
 
 
-        superlist.setOnItemClickListener(this);
+        superlist.setOnItemClickListener(this::onItemClick);
 
 
         back.setOnClickListener(new View.OnClickListener() {
