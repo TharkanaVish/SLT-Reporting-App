@@ -34,7 +34,7 @@ public class ViewAddedReports extends AppCompatActivity {
         report2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ViewAddedReports.this, ViewReportsEdit.class));
+                startActivity(new Intent(ViewAddedReports.this, Emp_ViewReportEdit.class));
             }
         });
 
