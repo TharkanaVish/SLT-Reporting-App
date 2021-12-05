@@ -29,6 +29,13 @@ public class Employeemain extends AppCompatActivity {
             }
         });
 
+        eviewreport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Employeemain.this, ViewAddedReports.class));
+            }
+        });
+
         eprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
