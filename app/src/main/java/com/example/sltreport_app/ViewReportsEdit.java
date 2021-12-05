@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class ViewReportsEdit extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
+public class ViewReportsEdit extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Button gps,img,edit,back;
     EditText town,village,desc;
@@ -31,8 +32,9 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         desc = findViewById(R.id.et_description);
         superlist = findViewById(R.id.sp_assign_super);
 
-
-        superlist.setOnItemClickListener(this::onItemClick);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Supervisors_List,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        superlist.setAdapter(adapter);
 
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -41,20 +43,18 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
                 startActivity(new Intent(ViewReportsEdit.this, SupervisorMain.class));
             }
         });
+
+        superlist.setOnItemSelectedListener(this);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,adapterView.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+        String selection = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(getApplicationContext(),selection, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,adapterView.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
     }
 }
