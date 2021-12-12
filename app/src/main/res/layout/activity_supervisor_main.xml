@@ -114,7 +114,7 @@
         android:layout_marginRight="52dp"
         android:layout_marginBottom="150dp"
         android:background="@drawable/textborder"
-        android:text="Assign Task"
+        android:text="To do List"
         app:backgroundTint="#6cbfb0" />
 
 </RelativeLayout>
