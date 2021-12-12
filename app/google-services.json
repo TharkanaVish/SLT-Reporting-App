@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "624730796005",
+    "firebase_url": "https://slt-app-a5fbd-default-rtdb.firebaseio.com",
+    "project_id": "slt-app-a5fbd",
+    "storage_bucket": "slt-app-a5fbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624730796005:android:a03c549f00fd4adf92890c",
+        "android_client_info": {
+          "package_name": "com.example.sltreport_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624730796005-af2i6kr6ukthjhmq0rn4fksj3bt8f5t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpKGBcwbGjwW3aWTzTVd_p4NnqT2gteVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624730796005-af2i6kr6ukthjhmq0rn4fksj3bt8f5t7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
