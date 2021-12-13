@@ -63,7 +63,7 @@ public class Reportbreakdown extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Report Added",Toast.LENGTH_LONG).show();
 
 
-            startActivity(new Intent(Reportbreakdown.this, Reportbreakdown.class));
+            startActivity(new Intent(Reportbreakdown.this, Employeemain.class));
 
 
 
