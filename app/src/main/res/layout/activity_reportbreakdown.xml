@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".Reportbreakdown">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Reportbreakdown">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -64,6 +64,20 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <EditText
+                    android:id="@+id/location"
+                    android:layout_width="285dp"
+                    android:layout_height="49dp"
+                    android:ems="10"
+                    android:hint="Paste Location"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.639"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+                <EditText
                     android:id="@+id/town"
                     android:layout_width="189dp"
                     android:layout_height="40dp"
@@ -71,10 +85,10 @@
                     android:hint="Town Name"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintHorizontal_bias="0.886"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.053"
+                    app:layout_constraintVertical_bias="0.032"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <EditText
@@ -85,10 +99,10 @@
                     android:hint="Village/Road Name"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintHorizontal_bias="0.92"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.165"
+                    app:layout_constraintVertical_bias="0.132"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <Button
@@ -126,6 +140,101 @@
                     app:layout_constraintVertical_bias="0.972"
                     tools:ignore="OnClick,TouchTargetSizeCheck" />
 
+                <LinearLayout
+                    android:id="@+id/statusLayout"
+                    android:layout_width="309dp"
+                    android:layout_height="75dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.45">
+
+
+                    <TextView
+                        android:id="@+id/detailsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/progressTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/getting_location"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:visibility="visible" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/gpsButton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="54dp"
+                        android:onClick="openLocationSettings"
+                        android:text="@string/turn_on_GPS"
+                        android:visibility="gone"
+                        tools:ignore="OnClick" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shareLayout"
+                    android:layout_width="311dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.244"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.556">
+                    <Button
+                        android:id="@+id/shareButton"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:onClick="shareLocation"
+                        android:text="@string/share_location" />
+
+                    <Button
+                        android:id="@+id/copyButton"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:onClick="copyLocation"
+                        android:text="@string/copy_location" />
+
+                    <Button
+                        android:id="@+id/viewButton"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:onClick="viewLocation"
+                        android:text="@string/view_location" />
+
+                </LinearLayout>
+
                 <Button
                     android:id="@+id/addimage"
                     android:layout_width="wrap_content"
@@ -133,22 +242,10 @@
                     android:text="Add Image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.625"
+                    app:layout_constraintHorizontal_bias="0.854"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.766" />
-
-                <Button
-                    android:id="@+id/addlocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Location"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.691"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.619" />
+                    app:layout_constraintVertical_bias="0.765" />
 
                 <TextView
                     android:id="@+id/townn"
@@ -158,10 +255,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.212"
+                    app:layout_constraintHorizontal_bias="0.08"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.053" />
+                    app:layout_constraintVertical_bias="0.032" />
 
                 <TextView
                     android:id="@+id/Villagen"
@@ -171,10 +268,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintHorizontal_bias="0.057"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.176" />
+                    app:layout_constraintVertical_bias="0.13" />
 
                 <TextView
                     android:id="@+id/descriptionn"
@@ -184,23 +281,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintHorizontal_bias="0.071"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.289" />
-
-                <TextView
-                    android:id="@+id/gpsn"
-                    android:layout_width="130dp"
-                    android:layout_height="30dp"
-                    android:text="GPS Location : "
-                    android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.06"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.598" />
+                    app:layout_constraintVertical_bias="0.235" />
 
                 <TextView
                     android:id="@+id/imagen"
@@ -210,24 +294,24 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.115"
+                    app:layout_constraintHorizontal_bias="0.133"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.74" />
+                    app:layout_constraintVertical_bias="0.753" />
 
                 <EditText
                     android:id="@+id/editTextTextMultiLine"
-                    android:layout_width="183dp"
-                    android:layout_height="145dp"
+                    android:layout_width="174dp"
+                    android:layout_height="107dp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.914"
+                    app:layout_constraintHorizontal_bias="0.896"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.37"
+                    app:layout_constraintVertical_bias="0.258"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
