@@ -1,103 +1,107 @@
 package com.example.sltreport_app;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Reportbreakdown extends AppCompatActivity {
+import java.text.MessageFormat;
+import java.util.Locale;
 
-    public static final int CAMERA_PERM_CODE = 101;
-    public static final int CAMERA_REQUEST_CODE = 102;
-    ImageView selectedImage;
-    EditText town,vilage,description;
-    Button addtomylist,gps,camera,addtosuplist;
+public class Reportbreakdown extends AppCompatActivity {
+    private final static int PERMISSION_REQUEST = 1;
+    private static final String TAG = Reportbreakdown.class.getSimpleName();
+    private Button gpsButton;
+    private TextView progressTitle;
+    private ProgressBar progressBar;
+    private TextView detailsText;
+
+    private Button shareButton;
+    private Button copyButton;
+    private Button viewButton;
+
+    private LocationManager locManager;
+    private Location lastLocation;
+    EditText town,vilage,description,location;
+    Button addtomylist,camera,addtosuplist;
     Report reportob;
     FirebaseDatabase rootNode;
     DatabaseReference db;
     int i=0;
+    private final LocationListener locListener = new LocationListener() {
+        public void onLocationChanged(Location loc) {
+            updateLocation(loc);
+        }
 
+        public void onProviderEnabled(String provider) {
+            updateLocation();
+        }
+
+        public void onProviderDisabled(String provider) {
+            updateLocation();
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportbreakdown);
-
+        setTitle(R.string.app_name);
+        location=findViewById(R.id.location);
         town= findViewById(R.id.town);
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
-        gps = findViewById(R.id.addlocation);
         camera = findViewById(R.id.addimage);
         addtosuplist = findViewById(R.id.btn_addBreakdownWithAssign);
         addtomylist=findViewById(R.id.addbreakdown);
-        selectedImage = findViewById(R.id.imgView_camera);
+        gpsButton = findViewById(R.id.gpsButton);
+        progressTitle = findViewById(R.id.progressTitle);
+        progressBar = findViewById(R.id.progressBar);
+        detailsText = findViewById(R.id.detailsText);
+        shareButton = findViewById(R.id.shareButton);
+        copyButton = findViewById(R.id.copyButton);
+        viewButton = findViewById(R.id.viewButton);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
+        locManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         reportob = new Report();
 
-
-        camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                askCameraPermissions();
-            }
-        });
-
     }
 
-    private void askCameraPermissions() {
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
-        }else{
-            openCamera();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CAMERA_PERM_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openCamera();
-            } else {
-                Toast.makeText(this, "Camera permission is required to use camera", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void openCamera() {
-        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(camera, CAMERA_REQUEST_CODE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_REQUEST_CODE) {
-            Bitmap img = (Bitmap) data.getExtras().get("data");
-            selectedImage.setImageBitmap(img);
-        }
-    }
-
-    public void add(View view){
+   public void add(View view){
         rootNode=FirebaseDatabase.getInstance();
         db= rootNode.getReference("Report");
 
@@ -106,13 +110,17 @@ public class Reportbreakdown extends AppCompatActivity {
         } else if (TextUtils.isEmpty(vilage.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"Enter vilage name",Toast.LENGTH_LONG).show();
         }
-        else if (TextUtils.isEmpty(description.getText().toString().trim())){
-            Toast.makeText(getApplicationContext(),"Input description",Toast.LENGTH_LONG).show();
+        else if (TextUtils.isEmpty(description.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Input description", Toast.LENGTH_LONG).show();
+        }
+        else if (TextUtils.isEmpty(location.getText().toString().trim())){
+                Toast.makeText(getApplicationContext(),"Copy location",Toast.LENGTH_LONG).show();
 
         } else {
             reportob.setTown(town.getText().toString().trim());
             reportob.setVilage(vilage.getText().toString().trim());
             reportob.setDescription(description.getText().toString().trim());
+            reportob.setLocation(location.getText().toString().trim());
 
 
             String Name = town.getText().toString().trim();
@@ -142,6 +150,232 @@ public class Reportbreakdown extends AppCompatActivity {
         town.setText("");
         vilage.setText("");
         description.setText("");
+        location.setText("");
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        try {
+            locManager.removeUpdates(locListener);
+        } catch (SecurityException e) {
+            Log.e(TAG, "Failed to stop listening for location updates", e);
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startRequestingLocation();
+        updateLocation();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST &&
+                grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            startRequestingLocation();
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.permission_denied, Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+    private void updateLocation() {
+        // Trigger a UI update without changing the location
+        updateLocation(lastLocation);
+    }
+    private void updateLocation(Location location) {
+        boolean locationEnabled = locManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        boolean waitingForLocation = locationEnabled && !validLocation(location);
+        boolean haveLocation = locationEnabled && !waitingForLocation;
+
+        // Update display area
+        gpsButton.setVisibility(locationEnabled ? View.GONE : View.VISIBLE);
+        progressTitle.setVisibility(waitingForLocation ? View.VISIBLE : View.GONE);
+        progressBar.setVisibility(waitingForLocation ? View.VISIBLE : View.GONE);
+        detailsText.setVisibility(haveLocation ? View.VISIBLE : View.GONE);
+
+        // Update buttons
+        shareButton.setEnabled(haveLocation);
+        copyButton.setEnabled(haveLocation);
+        viewButton.setEnabled(haveLocation);
+
+        if (haveLocation) {
+            String newline = System.getProperty("line.separator");
+            detailsText.setText(String.format("%s: %s%s%s: %s (%s)%s%s: %s (%s)",
+                    getString(R.string.accuracy), getAccuracy(location), newline,
+                    getString(R.string.latitude), getLatitude(location), getDMSLatitude(location), newline,
+                    getString(R.string.longitude), getLongitude(location), getDMSLongitude(location)));
+
+            lastLocation = location;
+        }
+    }
+
+    // ----------------------------------------------------
+    // DialogInterface Listeners
+    // ----------------------------------------------------
+    private class onClickShareListener implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialog, int i) {
+            shareLocationText(formatLocation(lastLocation, getResources().getStringArray(R.array.link_options)[i]));
+        }
+    }
+
+    private class onClickCopyListener implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialog, int i) {
+            copyLocationText(formatLocation(lastLocation, getResources().getStringArray(R.array.link_options)[i]));
+        }
+    }
+    // ----------------------------------------------------
+    // Actions
+    // ----------------------------------------------------
+    public void shareLocation(View view) {
+        if (!validLocation(lastLocation)) {
+            return;
+        }
+
+        String linkChoice = PreferenceManager.getDefaultSharedPreferences(this).getString("prefLinkType", "");
+
+        if (linkChoice.equals(getResources().getString(R.string.always_ask))) {
+            new AlertDialog.Builder(this).setTitle(R.string.choose_link)
+                    .setCancelable(true)
+                    .setItems(R.array.link_names, new onClickShareListener())
+                    .create()
+                    .show();
+        } else {
+            shareLocationText(formatLocation(lastLocation, linkChoice));
+        }
+    }
+
+    public void copyLocation(View view) {
+        if (!validLocation(lastLocation)) {
+            return;
+        }
+
+        String linkChoice = PreferenceManager.getDefaultSharedPreferences(this).getString("prefLinkType", "");
+
+        if (linkChoice.equals(getResources().getString(R.string.always_ask))) {
+            new AlertDialog.Builder(this).setTitle(R.string.choose_link)
+                    .setCancelable(true)
+                    .setItems(R.array.link_names, new onClickCopyListener())
+                    .create()
+                    .show();
+        } else {
+            copyLocationText(formatLocation(lastLocation, linkChoice));
+        }
+    }
+
+    public void viewLocation(View view) {
+        if (!validLocation(lastLocation)) {
+            return;
+        }
+
+        String uri = formatLocation(lastLocation, "geo:{0},{1}?q={0},{1}");
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(Intent.createChooser(intent, getString(R.string.view_location_via)));
+    }
+
+    public void openLocationSettings(View view) {
+        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+        }
+    }
+
+    // ----------------------------------------------------
+    // Helper functions
+    // ----------------------------------------------------
+    public void shareLocationText(String string) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_TEXT, string);
+        intent.setType("text/plain");
+        startActivity(Intent.createChooser(intent, getString(R.string.share_location_via)));
+    }
+
+    public void copyLocationText(String string) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (clipboard != null) {
+            ClipData clip = ClipData.newPlainText(getString(R.string.app_name), string);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(getApplicationContext(), R.string.copied, Toast.LENGTH_SHORT).show();
+        } else {
+            Log.e(TAG, "Failed to get the clipboard service");
+            Toast.makeText(getApplicationContext(), R.string.clipboard_error, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void startRequestingLocation() {
+        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            return;
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST);
+            return;
+        }
+
+        // GPS enabled and have permission - start requesting location updates
+        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
+    }
+
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+
+    private boolean validLocation(Location location) {
+        if (location == null) {
+            return false;
+        }
+
+        // Location must be from less than 30 seconds ago to be considered valid
+        if (Build.VERSION.SDK_INT < 17) {
+            return System.currentTimeMillis() - location.getTime() < 30e3;
+        } else {
+            return SystemClock.elapsedRealtimeNanos() - location.getElapsedRealtimeNanos() < 30e9;
+        }
+    }
+    private String getAccuracy(Location location) {
+        float accuracy = location.getAccuracy();
+        if (accuracy < 0.01) {
+            return "?";
+        } else if (accuracy > 99) {
+            return "99+";
+        } else {
+            return String.format(Locale.US, "%2.0fm", accuracy);
+        }
+    }
+    private String getLatitude(Location location) {
+        return String.format(Locale.US, "%2.5f", location.getLatitude());
+    }
+    private String getDMSLongitude(Location location) {
+        double val = location.getLongitude();
+        return String.format(Locale.US, "%.0f° %2.0f′ %2.3f″ %s",
+                Math.floor(Math.abs(val)),
+                Math.floor(Math.abs(val * 60) % 60),
+                (Math.abs(val) * 3600) % 60,
+                val > 0 ? "E" : "W"
+        );
+    }
+    private String getDMSLatitude(Location location) {
+        double val = location.getLatitude();
+        return String.format(Locale.US, "%.0f° %2.0f′ %2.3f″ %s",
+                Math.floor(Math.abs(val)),
+                Math.floor(Math.abs(val * 60) % 60),
+                (Math.abs(val) * 3600) % 60,
+                val > 0 ? "N" : "S"
+        );
+    }
+    private String getLongitude(Location location) {
+        return String.format(Locale.US, "%3.5f", location.getLongitude());
+    }
+
+    private String formatLocation(Location location, String format) {
+        return MessageFormat.format(format,
+                getLatitude(location), getLongitude(location));
     }
 
 }

@@ -5,12 +5,14 @@ public class Report {
     private String town;
     private String vilage;
     private String description;
+    private String location;
 
     public Report(){}
     public Report(String town,String vilage,String description){
         this.town=town;
         this.vilage=vilage;
         this.description=description;
+        this.location=location;
     }
 
     //getters
@@ -27,6 +29,7 @@ public class Report {
         return description;
     }
 
+    public String getLocation(){return location;}
     //setters
 
     public void setTown(String town) {
@@ -40,4 +43,6 @@ public class Report {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setLocation(String location){this.location=location;}
 }
