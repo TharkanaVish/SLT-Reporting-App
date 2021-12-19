@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/edd" />
 
     <TextView
         android:id="@+id/tv_emp_main"
