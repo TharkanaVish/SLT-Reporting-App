@@ -218,14 +218,14 @@
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imgView_camera"
                     android:layout_width="142dp"
                     android:layout_height="65dp"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toEndOf="@+id/addimage"
                     app:layout_constraintTop_toBottomOf="@+id/addlocation"
-                    app:srcCompat="@drawable/ic_launcher_background" />
+                    app:srcCompat="@android:drawable/editbox_dropdown_dark_frame" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
