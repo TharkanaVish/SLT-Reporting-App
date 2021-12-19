@@ -242,10 +242,10 @@
                     android:text="Add Image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.854"
+                    app:layout_constraintHorizontal_bias="0.149"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.765" />
+                    app:layout_constraintVertical_bias="0.76" />
 
                 <TextView
                     android:id="@+id/townn"
@@ -295,9 +295,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
                     app:layout_constraintHorizontal_bias="0.133"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.753" />
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder" />
 
                 <EditText
                     android:id="@+id/editTextTextMultiLine"
@@ -313,6 +311,16 @@
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
                     app:layout_constraintVertical_bias="0.258"
                     tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView
+                    android:id="@+id/imgView_camera"
+                    android:layout_width="95dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/addimage"
+                    app:layout_constraintTop_toBottomOf="@+id/location"
+                    app:srcCompat="@android:drawable/ic_input_add" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
