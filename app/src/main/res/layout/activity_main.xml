@@ -11,5 +11,5 @@
         android:layout_width="314dp"
         android:layout_height="434dp"
         android:layout_centerInParent="true"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/edd" />
 </RelativeLayout>
