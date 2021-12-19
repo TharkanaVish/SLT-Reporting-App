@@ -16,16 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
-            android:layout_marginLeft="27dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="27dp"
-            android:layout_marginRight="27dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/edd" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView

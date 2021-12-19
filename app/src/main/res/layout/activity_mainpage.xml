@@ -12,7 +12,7 @@
         android:layout_width="351dp"
         android:layout_height="158dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/edd" />
 
     <View
         android:id="@+id/textView2"
