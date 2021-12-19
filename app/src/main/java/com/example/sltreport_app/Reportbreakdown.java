@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Reportbreakdown extends AppCompatActivity {
 
     EditText town,vilage,description;
-    Button addtomylist;
+    Button addtomylist,gps,camera,addtosuplist;
     Report reportob;
     FirebaseDatabase rootNode;
     DatabaseReference db;
@@ -32,6 +32,9 @@ public class Reportbreakdown extends AppCompatActivity {
         town= findViewById(R.id.town);
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
+        gps = findViewById(R.id.addlocation);
+        camera = findViewById(R.id.addimage);
+        addtosuplist = findViewById(R.id.btn_addBreakdownWithAssign);
         addtomylist=findViewById(R.id.addbreakdown);
         reportob = new Report();
 
