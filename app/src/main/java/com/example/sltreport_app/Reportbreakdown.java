@@ -1,8 +1,14 @@
 package com.example.sltreport_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -17,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Reportbreakdown extends AppCompatActivity {
 
+    public static final int CAMERA_PERM_CODE = 101;
     EditText town,vilage,description;
     Button addtomylist,gps,camera,addtosuplist;
     Report reportob;
@@ -38,9 +45,41 @@ public class Reportbreakdown extends AppCompatActivity {
         addtomylist=findViewById(R.id.addbreakdown);
         reportob = new Report();
 
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                askCameraPermissions();
+            }
+        });
+
     }
 
-   public void add(View view){
+    private void askCameraPermissions() {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
+        }else{
+            openCamera();
+        }
+    }
+
+    private void openCamera() {
+        Toast.makeText(this,"Camera Open requested",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CAMERA_PERM_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+            } else {
+                Toast.makeText(this, "Camera permission is required to use camera", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void add(View view){
         rootNode=FirebaseDatabase.getInstance();
         db= rootNode.getReference("Report");
 
