@@ -53,7 +53,7 @@ public class Reportbreakdown extends AppCompatActivity {
 
     private LocationManager locManager;
     private Location lastLocation;
-    EditText town,vilage,description;
+    EditText town,vilage,description,location;
     Button addtomylist,camera,addtosuplist;
     Report reportob;
     FirebaseDatabase rootNode;
@@ -80,7 +80,7 @@ public class Reportbreakdown extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportbreakdown);
         setTitle(R.string.app_name);
-
+        location=findViewById(R.id.location);
         town= findViewById(R.id.town);
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
@@ -110,13 +110,17 @@ public class Reportbreakdown extends AppCompatActivity {
         } else if (TextUtils.isEmpty(vilage.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"Enter vilage name",Toast.LENGTH_LONG).show();
         }
-        else if (TextUtils.isEmpty(description.getText().toString().trim())){
-            Toast.makeText(getApplicationContext(),"Input description",Toast.LENGTH_LONG).show();
+        else if (TextUtils.isEmpty(description.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Input description", Toast.LENGTH_LONG).show();
+        }
+        else if (TextUtils.isEmpty(location.getText().toString().trim())){
+                Toast.makeText(getApplicationContext(),"Copy location",Toast.LENGTH_LONG).show();
 
         } else {
             reportob.setTown(town.getText().toString().trim());
             reportob.setVilage(vilage.getText().toString().trim());
             reportob.setDescription(description.getText().toString().trim());
+            reportob.setLocation(location.getText().toString().trim());
 
 
             String Name = town.getText().toString().trim();
@@ -146,6 +150,7 @@ public class Reportbreakdown extends AppCompatActivity {
         town.setText("");
         vilage.setText("");
         description.setText("");
+        location.setText("");
     }
 
 
@@ -318,14 +323,6 @@ public class Reportbreakdown extends AppCompatActivity {
         // GPS enabled and have permission - start requesting location updates
         locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
     }
-
-
-
-
-
-
-
-
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
 
