@@ -20,98 +20,75 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgv_supervisor_main">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_supervisor_main"
+                android:layout_width="338dp"
+                android:layout_height="480dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/border" />
 
-                <TextView
-                    android:id="@+id/tv_supervisor_main"
-                    android:layout_width="338dp"
-                    android:layout_height="480dp"
-                    android:layout_marginStart="37dp"
-                    android:layout_marginTop="185dp"
-                    android:background="@drawable/border"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/btn_report_smain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/textborder"
+                android:text="Report Breakdown"
+                app:backgroundTint="#6cbfb0" />
 
-                <Button
-                    android:id="@+id/btn_report_smain"
-                    android:layout_width="296dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/textborder"
-                    android:text="Report Breakdown"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="50dp"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_supervisor_main"
-                    app:layout_constraintTop_toTopOf="@+id/tv_supervisor_main"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="220dp" />
+            <Button
+                android:id="@+id/btn_viewreport_smain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/btn_report_smain"
+                android:background="@drawable/textborder"
+                android:text="View Added Reports"
+                app:backgroundTint="#6cbfb0" />
 
-                <Button
-                    android:id="@+id/btn_viewreport_smain"
-                    android:layout_width="296dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/textborder"
-                    android:text="View Added Reports"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="25dp"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_supervisor_main"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_report_smain"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="300dp" />
+            <Button
+                android:id="@+id/btn_message_smain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_viewreport_smain"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/textborder"
+                android:text="Messages"
+                app:backgroundTint="#6cbfb0" />
 
-                <Button
-                    android:id="@+id/btn_message_smain"
-                    android:layout_width="296dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/textborder"
-                    android:text="Messages"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="25dp"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_supervisor_main"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_viewreport_smain"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="380dp" />
+            <Button
+                android:id="@+id/btn_profile_smain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_message_smain"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/textborder"
+                android:text="View Profile"
+                app:backgroundTint="#6cbfb0" />
 
-                <Button
-                    android:id="@+id/btn_profile_smain"
-                    android:layout_width="296dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/textborder"
-                    android:text="View Profile"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="25dp"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_supervisor_main"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_message_smain"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="460dp" />
+            <Button
+                android:id="@+id/btn_assigntask_smain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_profile_smain"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/textborder"
+                android:text="To do List"
+                app:backgroundTint="#6cbfb0" />
 
-                <Button
-                    android:id="@+id/btn_assigntask_smain"
-                    android:layout_width="296dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/textborder"
-                    android:text="To do List"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="25dp"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/tv_supervisor_main"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_profile_smain"
-                    tools:layout_editor_absoluteX="52dp"
-                    tools:layout_editor_absoluteY="540dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>
