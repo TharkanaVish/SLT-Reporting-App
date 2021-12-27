@@ -31,73 +31,91 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_report_emain"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
-                android:background="@drawable/textborder"
-                android:text="Report Breakdown"
-                app:backgroundTint="#6cbfb0" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btn_viewreport_emain"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_below="@+id/btn_report_emain"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:layout_marginEnd="52dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/textborder"
-                android:text="View Added Reports"
-                app:backgroundTint="#6cbfb0" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="338dp"
+                    android:layout_height="480dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="27dp"
+                    android:background="@drawable/border"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btn_message_emain"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:layout_below="@+id/btn_viewreport_emain"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/textborder"
-                android:text="Supervisor Messages"
-                app:backgroundTint="#6cbfb0" />
+                <Button
+                    android:id="@+id/btn_report_emain"
+                    android:layout_width="296dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/textborder"
+                    android:text="Report Breakdown"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
 
-            <Button
-                android:id="@+id/btn_profile_emain"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:layout_below="@+id/btn_message_emain"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/textborder"
-                android:text="View Employee Profile"
-                app:backgroundTint="#6cbfb0" />
+                <Button
+                    android:id="@+id/btn_viewreport_emain"
+                    android:layout_width="296dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/btn_report_emain"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/textborder"
+                    android:text="View Added Reports"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_report_emain" />
 
-            <Button
-                android:id="@+id/btn_assigntask_emain"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:layout_below="@+id/btn_profile_emain"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/textborder"
-                android:text="To do List"
-                app:backgroundTint="#6cbfb0" />
+                <Button
+                    android:id="@+id/btn_message_emain"
+                    android:layout_width="296dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/btn_viewreport_emain"
+                    android:background="@drawable/textborder"
+                    android:text="Supervisor Messages"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_viewreport_emain"
+                    tools:layout_editor_absoluteX="52dp"
+                    tools:layout_editor_absoluteY="221dp" />
+
+                <Button
+                    android:id="@+id/btn_profile_emain"
+                    android:layout_width="296dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/btn_message_emain"
+                    android:background="@drawable/textborder"
+                    android:text="View Employee Profile"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_message_emain"
+                    tools:layout_editor_absoluteX="52dp"
+                    tools:layout_editor_absoluteY="297dp" />
+
+                <Button
+                    android:id="@+id/btn_assigntask_emain"
+                    android:layout_width="296dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/btn_profile_emain"
+                    android:background="@drawable/textborder"
+                    android:text="To do List"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_profile_emain"
+                    tools:layout_editor_absoluteX="52dp"
+                    tools:layout_editor_absoluteY="373dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
 
