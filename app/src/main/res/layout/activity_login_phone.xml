@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginPhone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="359dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/edd" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textview_Login"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="34sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Button for getting OTP-->
+
+        <!--Edittext for getting otp from user-->
+
+        <!--button for verifying user OTP-->
+
+        <TextView
+            android:id="@+id/textView_lgborder"
+            android:layout_width="280dp"
+            android:layout_height="388dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="42.5dp"
+            android:background="@drawable/border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/idEdtPhoneNumber"
+            android:layout_width="266dp"
+            android:layout_height="51dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:hint="Enter your phone"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+            app:layout_constraintVertical_bias="0.156" />
+
+        <Button
+            android:id="@+id/idBtnGetOtp"
+            android:layout_width="245dp"
+            android:layout_height="44dp"
+            android:layout_below="@id/idEdtPhoneNumber"
+            android:layout_margin="10dp"
+            android:text="Get OTP"
+            app:backgroundTint="#6cbfb0"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+            app:layout_constraintHorizontal_bias="0.395"
+            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+            app:layout_constraintVertical_bias="0.375" />
+
+        <EditText
+            android:id="@+id/idEdtOtp"
+            android:layout_width="264dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/idBtnGetOtp"
+            android:layout_margin="10dp"
+            android:hint="Enter OTP"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+            app:layout_constraintHorizontal_bias="0.446"
+            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+            app:layout_constraintVertical_bias="0.625" />
+
+        <Button
+            android:id="@+id/idBtnVerify"
+            android:layout_width="253dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/idEdtOtp"
+            android:layout_margin="10dp"
+            android:text="Verify OTP"
+            app:backgroundTint="#6cbfb0"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
+            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+            app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+            app:layout_constraintVertical_bias="0.848" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

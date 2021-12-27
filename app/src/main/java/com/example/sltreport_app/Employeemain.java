@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Employeemain extends AppCompatActivity {
-    Button ereport,eviewreport,emsg,eprofile,etask;
+    Button ereport,eviewreport,emsg,eprofile,etask,logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,17 @@ public class Employeemain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Employeemain.this, AssignedTasks.class));
+            }
+        });
+
+
+        findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent=new Intent(Employeemain.this,LoginPhone.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
     }

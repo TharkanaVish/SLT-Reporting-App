@@ -12,17 +12,30 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
-    Button loginbtn,clickherebtn;
-
+    Button Employee,Supervisour,Manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginbtn = findViewById(R.id.login_btn);
-        clickherebtn = findViewById(R.id.login_frgetPwd_btn);
+        Employee = findViewById(R.id.Employee);
+        Supervisour = findViewById(R.id.Supervisour);
+        Manager = findViewById(R.id.Manager);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+        Employee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, LoginPhone.class));
+            }
+        });
+
+        Supervisour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, LoginGmail.class));
+            }
+        });
+        Manager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, SupervisorMain.class));

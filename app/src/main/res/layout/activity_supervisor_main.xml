@@ -7,16 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".SupervisorMain">
 
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="167dp"
+        android:layout_height="53dp"
+        android:layout_alignBottom="@+id/imgv_supervisor_main"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/textborder"
+        android:text="Log out"
+        app:backgroundTint="#6cbfb0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
     <ImageView
         android:id="@+id/imgv_supervisor_main"
-        android:layout_width="246dp"
-        android:layout_height="145dp"
+        android:layout_width="237dp"
+        android:layout_height="126dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="-18dp"
+        android:layout_marginLeft="-18dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginRight="192dp"
         app:srcCompat="@drawable/edd" />
+
+
 
     <TextView
         android:id="@+id/tv_supervisor_main"
@@ -102,7 +130,7 @@
     <Button
         android:id="@+id/btn_assigntask_smain"
         android:layout_width="296dp"
-        android:layout_height="56dp"
+        android:layout_height="48dp"
         android:layout_alignStart="@+id/tv_supervisor_main"
         android:layout_alignLeft="@+id/tv_supervisor_main"
         android:layout_alignEnd="@+id/tv_supervisor_main"
@@ -115,6 +143,7 @@
         android:layout_marginBottom="150dp"
         android:background="@drawable/textborder"
         android:text="To do List"
-        app:backgroundTint="#6cbfb0" />
+        app:backgroundTint="#6cbfb0"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false" >SLT Report-app</string>
+    <string name="app_name" translatable="false">SLT Report-app</string>
     <string name="todo">TODO</string>
     <string name="share_location">Share</string>
     <string name="copy_location">Copy</string>

@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sltreport_app">
 
-    <uses-permission
-    android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,9 +16,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-    android:theme="@style/AppTheme">
-        <activity android:name=".Emp_ViewReportEdit"></activity>
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginGmail"
+            android:exported="true" />
+        <activity
+            android:name=".LoginPhone"
+            android:exported="true" />
+        <activity android:name=".Emp_ViewReportEdit" />
         <activity android:name=".ViewAddedReports" />
         <activity android:name=".ViewReportsEdit" />
         <activity android:name=".SupervisorMain" />
