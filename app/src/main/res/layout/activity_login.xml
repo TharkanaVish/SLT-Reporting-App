@@ -25,135 +25,146 @@
             app:srcCompat="@drawable/edd" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textview_Login"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:gravity="center"
-        android:text="Login"
-        android:textSize="34sp" />
+        android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/textView_lgborder"
-            android:layout_width="326dp"
-            android:layout_height="435dp"
-            android:layout_marginStart="42.5dp"
-            android:layout_marginLeft="42.5dp"
-            android:layout_marginTop="31dp"
-            android:layout_marginEnd="42.5dp"
-            android:layout_marginRight="42.5dp"
-            android:background="@drawable/border"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="244dp"
-            android:layout_height="112dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginRight="36dp"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.214"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toTopOf="@+id/textView_lgborder">
-
-            <RadioButton
-                android:id="@+id/login_emp_radiobtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Employee" />
-
-            <RadioButton
-                android:id="@+id/login_super_radiobtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Supervisor" />
-
-            <RadioButton
-                android:id="@+id/login_mgr_radiobtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Manager" />
-        </RadioGroup>
-
-        <EditText
-            android:id="@+id/ed_login_usrnme"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Username"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.514"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <EditText
-            android:id="@+id/ed_login_pwd"
-            android:layout_width="258dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toBottomOf="@+id/ed_login_usrnme" />
-
-        <TextView
-            android:id="@+id/textview_frget_pwd"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Forget Passowrd ?"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.162"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toBottomOf="@+id/ed_login_pwd" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/login_frgetPwd_btn"
-            android:layout_width="83dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="12dp"
-            android:background="#FBFAFA"
-            android:gravity="left"
-            android:text="Click Here"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textview_frget_pwd"
-            app:layout_constraintTop_toBottomOf="@+id/ed_login_pwd" />
+            <TextView
+                android:id="@+id/textview_Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:gravity="center"
+                android:text="Login"
+                android:textSize="34sp" />
 
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="221dp"
-            android:layout_height="38dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/textborder"
-            android:text="Login"
-            android:textAllCaps="false"
-            app:backgroundTint="#6cbfb0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-            app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-            app:layout_constraintTop_toBottomOf="@+id/textview_frget_pwd"
-            app:layout_constraintVertical_bias="1.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView_lgborder"
+                    android:layout_width="326dp"
+                    android:layout_height="435dp"
+                    android:layout_marginStart="42.5dp"
+                    android:layout_marginLeft="42.5dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginEnd="42.5dp"
+                    android:layout_marginRight="42.5dp"
+                    android:background="@drawable/border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="244dp"
+                    android:layout_height="112dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.214"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder">
+
+                    <RadioButton
+                        android:id="@+id/login_emp_radiobtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Employee" />
+
+                    <RadioButton
+                        android:id="@+id/login_super_radiobtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Supervisor" />
+
+                    <RadioButton
+                        android:id="@+id/login_mgr_radiobtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Manager" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/ed_login_usrnme"
+                    android:layout_width="258dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="40dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Username"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+                <EditText
+                    android:id="@+id/ed_login_pwd"
+                    android:layout_width="258dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/ed_login_usrnme" />
+
+                <TextView
+                    android:id="@+id/textview_frget_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Forget Passowrd ?"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.162"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/ed_login_pwd" />
+
+                <Button
+                    android:id="@+id/login_frgetPwd_btn"
+                    android:layout_width="83dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#FBFAFA"
+                    android:gravity="left"
+                    android:text="Click Here"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textview_frget_pwd"
+                    app:layout_constraintTop_toBottomOf="@+id/ed_login_pwd" />
+
+                <Button
+                    android:id="@+id/login_btn"
+                    android:layout_width="221dp"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/textborder"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_frget_pwd"
+                    app:layout_constraintVertical_bias="1.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
