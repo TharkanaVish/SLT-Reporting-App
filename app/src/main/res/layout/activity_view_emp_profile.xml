@@ -33,168 +33,180 @@
         android:textAllCaps="false"
         android:textSize="34sp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/viewEmp_borderTextView"
-            android:layout_width="363dp"
-            android:layout_height="467dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_viewEmp_Empno"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="36dp"
-            android:text="Employee No:"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tv_viewEmp_Name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
-            android:layout_marginTop="86dp"
-            android:text="Name :"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_viewEmp_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="136dp"
-            android:text="Email :"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/viewEmp_borderTextView"
+                    android:layout_width="363dp"
+                    android:layout_height="467dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_viewEmp_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="186dp"
-            android:text="Number :"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/tv_viewEmp_Empno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="36dp"
+                    android:text="Employee No:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <TextView
-            android:id="@+id/tv_viewEmp_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="236dp"
-            android:text="Username :"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/tv_viewEmp_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="86dp"
+                    android:text="Name :"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <EditText
-            android:id="@+id/et_viewEmp_empno"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_Empno"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/tv_viewEmp_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="136dp"
+                    android:text="Email :"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <EditText
-            android:id="@+id/et_viewEmp_empname"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="80dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_Name"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/tv_viewEmp_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="186dp"
+                    android:text="Number :"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <EditText
-            android:id="@+id/et_viewEmp_empemail"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="130dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_email"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <TextView
+                    android:id="@+id/tv_viewEmp_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="236dp"
+                    android:text="Username :"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <EditText
-            android:id="@+id/et_viewEmp_empphnumber"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="180dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:phoneNumber="true"
-            app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_number"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <EditText
+                    android:id="@+id/et_viewEmp_empno"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="28dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_Empno"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <EditText
-            android:id="@+id/et_viewEmp_empusname"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="230dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_username"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <EditText
+                    android:id="@+id/et_viewEmp_empname"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="80dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_Name"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <Button
-            android:id="@+id/btn_viewEmp_editEmp"
-            android:layout_width="294dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="308dp"
-            android:background="@drawable/textborder"
-            android:text="Edit Profile"
-            android:textStyle="bold"
-            app:backgroundTint="#6cbfb0"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <EditText
+                    android:id="@+id/et_viewEmp_empemail"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="130dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_email"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-        <Button
-            android:id="@+id/btn_viewEmp_bck"
-            android:layout_width="294dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="384dp"
-            android:background="@drawable/textborder"
-            android:text="Back"
-            android:textStyle="bold"
-            app:backgroundTint="#6cbfb0"
-            app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-            app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+                <EditText
+                    android:id="@+id/et_viewEmp_empphnumber"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="180dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:phoneNumber="true"
+                    app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_number"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/et_viewEmp_empusname"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="230dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toEndOf="@+id/tv_viewEmp_username"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+
+                <Button
+                    android:id="@+id/btn_viewEmp_editEmp"
+                    android:layout_width="294dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="308dp"
+                    android:background="@drawable/textborder"
+                    android:text="Edit Profile"
+                    android:textStyle="bold"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+
+                <Button
+                    android:id="@+id/btn_viewEmp_bck"
+                    android:layout_width="294dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="384dp"
+                    android:background="@drawable/textborder"
+                    android:text="Back"
+                    android:textStyle="bold"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
+                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
