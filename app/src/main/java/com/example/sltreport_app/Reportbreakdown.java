@@ -127,6 +127,23 @@ public class Reportbreakdown extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            if(resultCode == Activity.RESULT_OK){
+                File f = new File(currentPhotoPath);
+                selectedImage.setImageURI(Uri.fromFile(f));
+                Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
+
+                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                Uri contentUri = Uri.fromFile(f);
+                mediaScanIntent.setData(contentUri);
+                this.sendBroadcast(mediaScanIntent);
+            }
+        }
+    }
+
     private void askCameraPermissions() {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
@@ -139,7 +156,8 @@ public class Reportbreakdown extends AppCompatActivity {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        //File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
@@ -173,16 +191,7 @@ public class Reportbreakdown extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == CAMERA_REQUEST_CODE) {
-                if(resultCode == Activity.RESULT_OK){
-                    File f = new File(currentPhotoPath);
-                    selectedImage.setImageURI(Uri.fromFile(f));
-                }
-        }
-    }
+
 
     public void add(View view){
         rootNode=FirebaseDatabase.getInstance();
