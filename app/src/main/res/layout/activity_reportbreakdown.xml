@@ -286,18 +286,6 @@
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
                     app:layout_constraintVertical_bias="0.235" />
 
-                <TextView
-                    android:id="@+id/imagen"
-                    android:layout_width="130dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="156dp"
-                    android:text="Add Image : "
-                    android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.899"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder" />
-
                 <EditText
                     android:id="@+id/editTextTextMultiLine"
                     android:layout_width="174dp"
