@@ -41,8 +41,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -73,8 +78,10 @@ public class Reportbreakdown extends AppCompatActivity {
     Report reportob;
     FirebaseDatabase rootNode;
     DatabaseReference db;
+    StorageReference storageReference;
     int i=0;
     String currentPhotoPath;
+
     private final LocationListener locListener = new LocationListener() {
         public void onLocationChanged(Location loc) {
             updateLocation(loc);
@@ -118,6 +125,8 @@ public class Reportbreakdown extends AppCompatActivity {
         locManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         reportob = new Report();
 
+        storageReference = FirebaseStorage.getInstance().getReference();
+
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,8 +151,31 @@ public class Reportbreakdown extends AppCompatActivity {
                 Uri contentUri = Uri.fromFile(f);
                 mediaScanIntent.setData(contentUri);
                 this.sendBroadcast(mediaScanIntent);
+
+                uploadImageToFirebase(f.getName(),contentUri);
             }
         }
+    }
+
+    private void uploadImageToFirebase(String name, Uri contentUri) {
+        StorageReference image = storageReference.child("images/" + name);
+        image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Log.d("tag","onSuccess:Uploaded Image URL is " + uri.toString());
+                    }
+                });
+                Toast.makeText(Reportbreakdown.this,"Image Uploaded successfully",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Reportbreakdown.this,"Upload failed",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void askCameraPermissions() {
