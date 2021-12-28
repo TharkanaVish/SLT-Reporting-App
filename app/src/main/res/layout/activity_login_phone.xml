@@ -58,6 +58,7 @@
                     android:id="@+id/textView_lgborder"
                     android:layout_width="280dp"
                     android:layout_height="350dp"
+                    android:layout_marginTop="20dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/border" />
 
@@ -66,7 +67,7 @@
                     android:layout_width="266dp"
                     android:layout_height="51dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="35dp"
                     android:hint="Enter your phone"
                     android:importantForAutofill="no"
                     android:inputType="phone" />
