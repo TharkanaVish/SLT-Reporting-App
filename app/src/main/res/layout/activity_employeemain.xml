@@ -9,137 +9,20 @@
 
     <ImageView
         android:id="@+id/imgv_emp_main"
-        android:layout_width="193dp"
-        android:layout_height="106dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="141dp"
+        android:layout_height="99dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginRight="200dp"
         app:srcCompat="@drawable/edd" />
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="145dp"
+        android:layout_width="135dp"
         android:layout_height="43dp"
-        android:layout_alignBottom="@+id/imgv_emp_main"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="249dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/imgv_emp_main"
         android:background="@drawable/textborder"
         android:text="Log out"
-        app:backgroundTint="#6cbfb0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tv_emp_main"
-        android:layout_width="329dp"
-        android:layout_height="460dp"
-        android:layout_below="@id/imgv_emp_main"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/border" />
-
-    <Button
-        android:id="@+id/btn_report_emain"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:layout_alignStart="@+id/tv_emp_main"
-        android:layout_alignLeft="@+id/tv_emp_main"
-        android:layout_alignEnd="@+id/tv_emp_main"
-        android:layout_alignRight="@+id/tv_emp_main"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/textborder"
-        android:text="Report Breakdown"
-        app:backgroundTint="#6cbfb0" />
-
-    <Button
-        android:id="@+id/btn_viewreport_emain"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:layout_alignStart="@+id/tv_emp_main"
-        android:layout_alignLeft="@+id/tv_emp_main"
-        android:layout_alignEnd="@+id/tv_emp_main"
-        android:layout_alignRight="@+id/tv_emp_main"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/textborder"
-        android:text="View Added Reports"
-        app:backgroundTint="#6cbfb0" />
-
-    <Button
-        android:id="@+id/btn_message_emain"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:layout_alignStart="@+id/tv_emp_main"
-        android:layout_alignLeft="@+id/tv_emp_main"
-        android:layout_alignEnd="@+id/tv_emp_main"
-        android:layout_alignRight="@+id/tv_emp_main"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/textborder"
-        android:text="Supervisor Messages"
-        app:backgroundTint="#6cbfb0" />
-
-    <Button
-        android:id="@+id/btn_profile_emain"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:layout_alignStart="@+id/tv_emp_main"
-        android:layout_alignLeft="@+id/tv_emp_main"
-        android:layout_alignEnd="@+id/tv_emp_main"
-        android:layout_alignRight="@+id/tv_emp_main"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/textborder"
-        android:text="View Employee Profile"
-        app:backgroundTint="#6cbfb0" />
-
-    <Button
-        android:id="@+id/btn_assigntask_emain"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:layout_alignStart="@+id/tv_emp_main"
-        android:layout_alignLeft="@+id/tv_emp_main"
-        android:layout_alignEnd="@+id/tv_emp_main"
-        android:layout_alignRight="@+id/tv_emp_main"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/textborder"
-        android:text="To do List"
         app:backgroundTint="#6cbfb0"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -147,11 +30,85 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/logout"
-        android:layout_marginBottom="-76dp"
+        android:layout_below="@+id/imgv_emp_main"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="   Name" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_emp_main"
+                android:layout_width="329dp"
+                android:layout_height="460dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="170dp"
+                android:background="@drawable/border" />
+
+            <Button
+                android:id="@+id/btn_report_emain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="210dp"
+                android:background="@drawable/textborder"
+                android:text="Report Breakdown"
+                app:backgroundTint="#6cbfb0" />
+
+            <Button
+                android:id="@+id/btn_viewreport_emain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_report_emain"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textborder"
+                android:text="View Added Reports"
+                app:backgroundTint="#6cbfb0" />
+
+            <Button
+                android:id="@+id/btn_message_emain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_viewreport_emain"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textborder"
+                android:text="Supervisor Messages"
+                app:backgroundTint="#6cbfb0" />
+
+            <Button
+                android:id="@+id/btn_profile_emain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_message_emain"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textborder"
+                android:text="View Employee Profile"
+                app:backgroundTint="#6cbfb0" />
+
+            <Button
+                android:id="@+id/btn_assigntask_emain"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_profile_emain"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textborder"
+                android:text="To do List"
+                app:backgroundTint="#6cbfb0"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
