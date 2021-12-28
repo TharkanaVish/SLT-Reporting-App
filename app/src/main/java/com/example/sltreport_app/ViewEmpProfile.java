@@ -17,8 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ViewEmpProfile extends AppCompatActivity {
     Button editEmp,back;
-    EditText et_viewEmp_empphnumber;
-    String phoneNumber;
+    EditText et_viewEmp_empphnumber,et_viewEmp_empemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +26,16 @@ public class ViewEmpProfile extends AppCompatActivity {
 
         editEmp = findViewById(R.id.btn_viewEmp_editEmp);
         back = findViewById(R.id.btn_viewEmp_bck);
+        et_viewEmp_empphnumber = findViewById(R.id.et_viewEmp_empphnumber);
+        et_viewEmp_empemail=findViewById(R.id.et_viewEmp_empemail);
+
 
         // get saved phone number
-        String phoneNo = getIntent().getStringExtra("phoneNo");
+        String phone = getIntent().getStringExtra("Key2");
+        String emails=getIntent().getStringExtra("Key5");
 
-
-        et_viewEmp_empphnumber = findViewById(R.id.et_viewEmp_empphnumber);
-        et_viewEmp_empphnumber.setText(phoneNo);
-
-
-
+        et_viewEmp_empphnumber.setText(phone);
+        et_viewEmp_empemail.setText(emails);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

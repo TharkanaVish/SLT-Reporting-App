@@ -10,16 +10,16 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="167dp"
-        android:layout_height="53dp"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
         android:layout_alignBottom="@+id/imgv_supervisor_main"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginStart="247dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="37dp"
         android:background="@drawable/textborder"
         android:text="Log out"
         app:backgroundTint="#6cbfb0"
@@ -31,8 +31,8 @@
 
     <ImageView
         android:id="@+id/imgv_supervisor_main"
-        android:layout_width="237dp"
-        android:layout_height="126dp"
+        android:layout_width="wrap_content"
+        android:layout_height="94dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -40,10 +40,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="-18dp"
         android:layout_marginLeft="-18dp"
-        android:layout_marginEnd="192dp"
-        android:layout_marginRight="192dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginRight="213dp"
         app:srcCompat="@drawable/edd" />
-
 
 
     <TextView
@@ -54,6 +53,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/border" />
+
 
     <Button
         android:id="@+id/btn_report_smain"
@@ -72,6 +72,7 @@
         android:background="@drawable/textborder"
         android:text="Report Breakdown"
         app:backgroundTint="#6cbfb0" />
+
 
     <Button
         android:id="@+id/btn_viewreport_smain"
@@ -145,5 +146,13 @@
         android:text="To do List"
         app:backgroundTint="#6cbfb0"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
 
 </RelativeLayout>

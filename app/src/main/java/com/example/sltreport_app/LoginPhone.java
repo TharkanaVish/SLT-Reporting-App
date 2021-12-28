@@ -101,7 +101,9 @@ public class LoginPhone extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // if the code is correct and the task is successful
                             // we are sending our user to new activity.
+                            String phone=edtPhone.getText().toString().trim();
                             Intent i = new Intent(LoginPhone.this, Employeemain.class);
+                            i.putExtra("Key1",phone);
                             startActivity(i);
                             finish();
                         } else {

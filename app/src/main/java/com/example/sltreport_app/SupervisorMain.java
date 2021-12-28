@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SupervisorMain extends AppCompatActivity {
 
     Button sreport,sviewreport,smsg,sprofile,stask;
+    EditText editTextTextPersonName5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,16 @@ public class SupervisorMain extends AppCompatActivity {
         smsg = findViewById(R.id.btn_message_smain);
         sprofile = findViewById(R.id.btn_profile_smain);
         stask = findViewById(R.id.btn_assigntask_smain);
+        editTextTextPersonName5=findViewById(R.id.editTextTextPersonName5);
+
+
+        // get saved phone number
+        String email = getIntent().getStringExtra("Key4");
+
+
+        editTextTextPersonName5.setText(email);
+
+
 
         sreport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +52,12 @@ public class SupervisorMain extends AppCompatActivity {
         sprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SupervisorMain.this, ViewEmpProfile.class));
+                        String emails=editTextTextPersonName5.getText().toString().trim();
+
+                Intent t=new Intent(SupervisorMain.this, ViewEmpProfile.class);
+                t.putExtra("Key5",emails);
+                startActivity(t);
+
             }
         });
 

@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Employeemain extends AppCompatActivity {
     Button ereport,eviewreport,emsg,eprofile,etask,logout;
-
+    EditText editTextTextPersonName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,15 @@ public class Employeemain extends AppCompatActivity {
         emsg = findViewById(R.id.btn_message_emain);
         eprofile = findViewById(R.id.btn_profile_emain);
         etask = findViewById(R.id.btn_assigntask_emain);
+        editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
+
+
+        // get saved phone number
+        String phone = getIntent().getStringExtra("Key1");
+
+
+        editTextTextPersonName.setText(phone);
+
 
         ereport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +51,12 @@ public class Employeemain extends AppCompatActivity {
         eprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Employeemain.this, ViewEmpProfile.class));
+                String phone=editTextTextPersonName.getText().toString().trim();
+
+                Intent i = new Intent(Employeemain.this, ViewEmpProfile.class);
+                i.putExtra("Key2",phone);
+                startActivity(i);
+
             }
         });
 

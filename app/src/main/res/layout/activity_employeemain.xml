@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgv_emp_main"
-        android:layout_width="wrap_content"
-        android:layout_height="129dp"
+        android:layout_width="193dp"
+        android:layout_height="106dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -18,22 +18,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginEnd="195dp"
-        android:layout_marginRight="195dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
         app:srcCompat="@drawable/edd" />
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="167dp"
-        android:layout_height="53dp"
+        android:layout_width="145dp"
+        android:layout_height="43dp"
         android:layout_alignBottom="@+id/imgv_emp_main"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="249dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/textborder"
         android:text="Log out"
         app:backgroundTint="#6cbfb0"
@@ -142,5 +142,16 @@
         android:text="To do List"
         app:backgroundTint="#6cbfb0"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/logout"
+        android:layout_marginBottom="-76dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="   Name" />
 
 </RelativeLayout>

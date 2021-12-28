@@ -73,18 +73,25 @@ public class LoginGmail extends AppCompatActivity {
                                             if (user.isEmailVerified()) {
 
 
+                                                String email=emailTextInput.getText().toString().trim();
+
                                                 System.out.println("Email Verified : " + user.isEmailVerified());
                                                 Intent HomeActivity = new Intent(LoginGmail.this, SupervisorMain.class);
+                                                HomeActivity.putExtra("Key4",email);
+
                                                 setResult(RESULT_OK, null);
                                                 startActivity(HomeActivity);
                                                 LoginGmail.this.finish();
 
 
                                             } else {
+                                                String email=emailTextInput.getText().toString().trim();
 
                                                 System.out.println("Email Verified : " + user.isEmailVerified());
                                                 Intent HomeActivity = new Intent(LoginGmail.this, SupervisorMain.class);
                                                 setResult(RESULT_OK, null);
+                                                HomeActivity.putExtra("Key4",email);
+
                                                 startActivity(HomeActivity);
                                                 LoginGmail.this.finish();
 
