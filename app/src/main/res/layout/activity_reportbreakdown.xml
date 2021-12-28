@@ -50,7 +50,7 @@
                 <TextView
                     android:id="@+id/textView_lgborder"
                     android:layout_width="339dp"
-                    android:layout_height="590dp"
+                    android:layout_height="690dp"
                     android:layout_marginStart="42dp"
                     android:layout_marginLeft="42dp"
                     android:layout_marginTop="28dp"
@@ -110,34 +110,17 @@
                     android:layout_width="299dp"
                     android:layout_height="44dp"
                     android:background="@drawable/textborder"
-                    android:text="Add To My List"
                     android:onClick="add"
+                    android:text="Add To My List"
                     android:textAllCaps="false"
                     android:textColor="#000000"
                     app:backgroundTint="#6cbfb0"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintHorizontal_bias="0.526"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.888"
-                    tools:ignore="OnClick,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_addBreakdownWithAssign"
-                    android:layout_width="299dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/textborder"
-                    android:text="Add To Supervisor List"
-                    android:textAllCaps="false"
-                    android:textColor="#000000"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.508"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.972"
+                    app:layout_constraintVertical_bias="0.906"
                     tools:ignore="OnClick,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -242,10 +225,10 @@
                     android:text="Add Image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.149"
+                    app:layout_constraintHorizontal_bias="0.145"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.76" />
+                    app:layout_constraintVertical_bias="0.75" />
 
                 <TextView
                     android:id="@+id/townn"
@@ -303,15 +286,47 @@
 
                 <ImageView
                     android:id="@+id/imgView_camera"
-                    android:layout_width="95dp"
-                    android:layout_height="65dp"
+                    android:layout_width="141dp"
+                    android:layout_height="78dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintStart_toEndOf="@+id/addimage"
                     app:layout_constraintTop_toBottomOf="@+id/location"
                     app:srcCompat="@android:drawable/ic_input_add" />
 
+                <Button
+                    android:id="@+id/btn_addBreakdownWithAssign"
+                    android:layout_width="299dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/textborder"
+                    android:text="Add To Supervisor List"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    app:backgroundTint="#6cbfb0"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/addbreakdown"
+                    tools:ignore="OnClick,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/imageName"
+                    android:layout_width="162dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="148dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/addbreakdown"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/imgView_camera"
+                    app:layout_constraintVertical_bias="0.0" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
 

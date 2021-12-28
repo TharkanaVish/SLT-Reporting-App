@@ -6,6 +6,7 @@ public class Report {
     private String vilage;
     private String description;
     private String location;
+    private String imageName;
 
     public Report(){}
     public Report(String town,String vilage,String description){
@@ -13,6 +14,7 @@ public class Report {
         this.vilage=vilage;
         this.description=description;
         this.location=location;
+        this.imageName=imageName;
     }
 
     //getters
@@ -30,6 +32,8 @@ public class Report {
     }
 
     public String getLocation(){return location;}
+
+    public String getImageName(){return imageName;}
     //setters
 
     public void setTown(String town) {
@@ -45,4 +49,6 @@ public class Report {
     }
 
     public void setLocation(String location){this.location=location;}
+
+    public void setImageName(String imageName) { this.imageName = imageName; }
 }

@@ -68,7 +68,7 @@ public class Reportbreakdown extends AppCompatActivity {
 
     private LocationManager locManager;
     private Location lastLocation;
-    EditText town,vilage,description,location;
+    EditText town,vilage,description,location,imageName;
     Button addtomylist,camera,addtosuplist;
     Report reportob;
     FirebaseDatabase rootNode;
@@ -101,6 +101,7 @@ public class Reportbreakdown extends AppCompatActivity {
         town= findViewById(R.id.town);
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
+        imageName = findViewById(R.id.imageName);
         camera = findViewById(R.id.addimage);
         addtosuplist = findViewById(R.id.btn_addBreakdownWithAssign);
         addtomylist=findViewById(R.id.addbreakdown);
@@ -135,6 +136,7 @@ public class Reportbreakdown extends AppCompatActivity {
                 File f = new File(currentPhotoPath);
                 selectedImage.setImageURI(Uri.fromFile(f));
                 Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
+                imageName.setText(f.getName());
 
                 Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                 Uri contentUri = Uri.fromFile(f);
@@ -207,12 +209,16 @@ public class Reportbreakdown extends AppCompatActivity {
         }
         else if (TextUtils.isEmpty(location.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"Copy location",Toast.LENGTH_LONG).show();
-
-        } else {
+        }
+        else if (TextUtils.isEmpty(imageName.getText().toString().trim())){
+            Toast.makeText(getApplicationContext(),"Add an Image",Toast.LENGTH_LONG).show();
+        }
+        else {
             reportob.setTown(town.getText().toString().trim());
             reportob.setVilage(vilage.getText().toString().trim());
             reportob.setDescription(description.getText().toString().trim());
             reportob.setLocation(location.getText().toString().trim());
+            reportob.setImageName(imageName.getText().toString().trim());
 
 
             String Name = town.getText().toString().trim();
@@ -243,6 +249,7 @@ public class Reportbreakdown extends AppCompatActivity {
         vilage.setText("");
         description.setText("");
         location.setText("");
+        imageName.setText("");
     }
 
 
