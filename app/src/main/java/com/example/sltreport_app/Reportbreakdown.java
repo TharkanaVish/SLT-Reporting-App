@@ -48,6 +48,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -143,7 +144,7 @@ public class Reportbreakdown extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE) {
             if(resultCode == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
-                selectedImage.setImageURI(Uri.fromFile(f));
+                //selectedImage.setImageURI(Uri.fromFile(f));
                 Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
                 imageName.setText(f.getName());
 
@@ -165,7 +166,7 @@ public class Reportbreakdown extends AppCompatActivity {
                 image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        Log.d("tag","onSuccess:Uploaded Image URL is " + uri.toString());
+                        Picasso.get().load(uri).into(selectedImage);
                     }
                 });
                 Toast.makeText(Reportbreakdown.this,"Image Uploaded successfully",Toast.LENGTH_SHORT).show();
@@ -190,7 +191,6 @@ public class Reportbreakdown extends AppCompatActivity {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        //File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
