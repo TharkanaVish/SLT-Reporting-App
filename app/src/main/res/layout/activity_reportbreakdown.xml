@@ -52,29 +52,28 @@
                     android:layout_width="339dp"
                     android:layout_height="900dp"
                     android:layout_marginStart="42dp"
-                    android:layout_marginLeft="42dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="43dp"
-                    android:layout_marginRight="43dp"
                     android:background="@drawable/border"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.461"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <EditText
                     android:id="@+id/location"
-                    android:layout_width="285dp"
-                    android:layout_height="49dp"
+                    android:layout_width="313dp"
+                    android:layout_height="50dp"
                     android:ems="10"
                     android:hint="Paste Location"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintHorizontal_bias="0.384"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.639"
+                    app:layout_constraintVertical_bias="0.492"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <EditText
@@ -138,10 +137,10 @@
                     android:paddingBottom="@dimen/activity_vertical_margin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.45">
+                    app:layout_constraintVertical_bias="0.335">
 
 
                     <TextView
@@ -188,10 +187,11 @@
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.244"
+                    app:layout_constraintHorizontal_bias="0.392"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.556">
+                    app:layout_constraintVertical_bias="0.419">
+
                     <Button
                         android:id="@+id/shareButton"
                         android:layout_width="0dp"
@@ -220,15 +220,16 @@
 
                 <Button
                     android:id="@+id/addimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="115dp"
+                    android:layout_height="33dp"
                     android:text="Add Image"
+                    android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.145"
+                    app:layout_constraintHorizontal_bias="0.08"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.75" />
+                    app:layout_constraintVertical_bias="0.859" />
 
                 <TextView
                     android:id="@+id/townn"
@@ -258,39 +259,24 @@
 
                 <TextView
                     android:id="@+id/descriptionn"
-                    android:layout_width="130dp"
-                    android:layout_height="30dp"
-                    android:text="Description : "
+                    android:layout_width="115dp"
+                    android:layout_height="34dp"
+                    android:text="Road Details :"
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.071"
+                    app:layout_constraintHorizontal_bias="0.053"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.235" />
-
-                <EditText
-                    android:id="@+id/editTextTextMultiLine"
-                    android:layout_width="174dp"
-                    android:layout_height="107dp"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.896"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.258"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    app:layout_constraintVertical_bias="0.205" />
 
                 <ImageView
                     android:id="@+id/imgView_camera"
-                    android:layout_width="161dp"
-                    android:layout_height="142dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toEndOf="@+id/addimage"
+                    android:layout_width="300dp"
+                    android:layout_height="197dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/location"
                     app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -326,6 +312,29 @@
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/imgView_camera"
                     app:layout_constraintVertical_bias="0.822" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="186dp"
+                    android:layout_height="86dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="24dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintStart_toEndOf="@+id/descriptionn"
+                    app:layout_constraintTop_toBottomOf="@+id/vilage"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ProgressBar
+                    android:id="@+id/imgPrograssBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="299dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/imgView_camera" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
