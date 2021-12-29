@@ -30,7 +30,6 @@ public class ViewEmpProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_emp_profile);
 
-        editEmp = findViewById(R.id.btn_viewEmp_editEmp);
         back = findViewById(R.id.btn_viewEmp_bck);
         et_viewEmp_empphnumber = findViewById(R.id.et_viewEmp_empphnumber);
         et_viewEmp_empemail=findViewById(R.id.et_viewEmp_empemail);
@@ -50,29 +49,30 @@ public class ViewEmpProfile extends AppCompatActivity {
             }
         });
 
-        final DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("employee");
-        databaseReference.child("-MpqEm6WRZmDPlTTM6aU").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String emp= String.valueOf(snapshot.child("empno").getValue());
-                String phone= String.valueOf(snapshot.child("number").getValue());
-                String name= String.valueOf(snapshot.child("name").getValue());
-                String uname= String.valueOf(snapshot.child("username").getValue());
-                et_viewEmp_empno.setText(emp);
-                et_viewEmp_empusname.setText(uname);
-                et_viewEmp_empname.setText(name);
-                et_viewEmp_empphnumber.setText(phone);
 
-            }
+            final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("employee");
+            databaseReference.child(phone).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String emp = String.valueOf(snapshot.child("empno").getValue());
+                    String phones = String.valueOf(snapshot.child("number").getValue());
+                    String name = String.valueOf(snapshot.child("name").getValue());
+                    String email = String.valueOf(snapshot.child("email").getValue());
+                    String uname = String.valueOf(snapshot.child("username").getValue());
+                    et_viewEmp_empno.setText(emp);
+                    et_viewEmp_empusname.setText(uname);
+                    et_viewEmp_empname.setText(name);
+                    et_viewEmp_empemail.setText(email);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
+                }
+            });
+        }
 
 
 
     }
-}

@@ -27,7 +27,7 @@ public class SupervisorMain extends AppCompatActivity {
         editTextTextPersonName5=findViewById(R.id.editTextTextPersonName5);
 
 
-        // get saved phone number
+        // get saved mail
         String email = getIntent().getStringExtra("Key4");
 
 

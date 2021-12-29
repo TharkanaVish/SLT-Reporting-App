@@ -178,26 +178,11 @@
                     app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
 
                 <Button
-                    android:id="@+id/btn_viewEmp_editEmp"
-                    android:layout_width="294dp"
-                    android:layout_height="62dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginTop="308dp"
-                    android:background="@drawable/textborder"
-                    android:text="Edit Profile"
-                    android:textStyle="bold"
-                    app:backgroundTint="#6cbfb0"
-                    app:layout_constraintStart_toStartOf="@+id/viewEmp_borderTextView"
-                    app:layout_constraintTop_toTopOf="@+id/viewEmp_borderTextView" />
-
-                <Button
                     android:id="@+id/btn_viewEmp_bck"
                     android:layout_width="294dp"
                     android:layout_height="62dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginTop="384dp"
+                    android:layout_marginTop="360dp"
                     android:background="@drawable/textborder"
                     android:text="Back"
                     android:textStyle="bold"
