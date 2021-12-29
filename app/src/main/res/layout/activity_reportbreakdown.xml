@@ -50,7 +50,7 @@
                 <TextView
                     android:id="@+id/textView_lgborder"
                     android:layout_width="339dp"
-                    android:layout_height="900dp"
+                    android:layout_height="1000dp"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="43dp"
@@ -272,9 +272,9 @@
 
                 <ImageView
                     android:id="@+id/imgView_camera"
-                    android:layout_width="300dp"
-                    android:layout_height="197dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_width="289dp"
+                    android:layout_height="225dp"
+                    android:layout_marginStart="21dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/location"
@@ -328,11 +328,12 @@
 
                 <ProgressBar
                     android:id="@+id/imgPrograssBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="299dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="20dp"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="124dp"
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_marginTop="12dp"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/imgView_camera" />
 

@@ -16,6 +16,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -46,6 +47,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
@@ -65,7 +67,7 @@ public class Reportbreakdown extends AppCompatActivity {
     ImageView selectedImage;
     private Button gpsButton;
     private TextView progressTitle;
-    private ProgressBar progressBar;
+    private ProgressBar progressBar,imgProgressBar;
     private TextView detailsText;
 
     private Button shareButton;
@@ -121,6 +123,9 @@ public class Reportbreakdown extends AppCompatActivity {
         copyButton = findViewById(R.id.copyButton);
         viewButton = findViewById(R.id.viewButton);
         selectedImage = findViewById(R.id.imgView_camera);
+        imgProgressBar = findViewById(R.id.imgPrograssBar);
+
+        imgProgressBar.setVisibility(View.INVISIBLE);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         locManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -144,7 +149,6 @@ public class Reportbreakdown extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE) {
             if(resultCode == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
-                //selectedImage.setImageURI(Uri.fromFile(f));
                 Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
                 imageName.setText(f.getName());
 
@@ -166,14 +170,21 @@ public class Reportbreakdown extends AppCompatActivity {
                 image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
+                        imgProgressBar.setVisibility(View.INVISIBLE);
                         Picasso.get().load(uri).into(selectedImage);
                     }
                 });
                 Toast.makeText(Reportbreakdown.this,"Image Uploaded successfully",Toast.LENGTH_SHORT).show();
             }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                imgProgressBar.setVisibility(View.VISIBLE);
+            }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                imgProgressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(Reportbreakdown.this,"Upload failed",Toast.LENGTH_SHORT).show();
             }
         });
