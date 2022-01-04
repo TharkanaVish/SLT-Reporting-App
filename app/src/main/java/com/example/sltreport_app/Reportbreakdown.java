@@ -76,7 +76,7 @@ public class Reportbreakdown extends AppCompatActivity {
 
     private LocationManager locManager;
     private Location lastLocation;
-    EditText town,vilage,description,location,imageName;
+    EditText town,vilage,description,location,imageName,imageUrl;
     Button addtomylist,camera,addtosuplist;
     Report reportob;
     FirebaseDatabase rootNode;
@@ -112,6 +112,7 @@ public class Reportbreakdown extends AppCompatActivity {
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
         imageName = findViewById(R.id.imageName);
+        imageUrl = findViewById(R.id.imageUrl);
         camera = findViewById(R.id.addimage);
         addtosuplist = findViewById(R.id.btn_addBreakdownWithAssign);
         addtomylist=findViewById(R.id.addbreakdown);
@@ -150,6 +151,7 @@ public class Reportbreakdown extends AppCompatActivity {
             if(resultCode == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
                 Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
+                imageName.setText(f.getName());
 
                 Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                 Uri contentUri = Uri.fromFile(f);
@@ -170,7 +172,7 @@ public class Reportbreakdown extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         imgProgressBar.setVisibility(View.INVISIBLE);
-                        imageName.setText(uri.toString());
+                        imageUrl.setText(uri.toString());
                         Picasso.get().load(uri).into(selectedImage);
                     }
                 });
@@ -261,7 +263,7 @@ public class Reportbreakdown extends AppCompatActivity {
             reportob.setVilage(vilage.getText().toString().trim());
             reportob.setDescription(description.getText().toString().trim());
             reportob.setLocation(location.getText().toString().trim());
-            reportob.setImageName(imageName.getText().toString().trim());
+            reportob.setImageName(imageUrl.getText().toString().trim());
 
 
             String Name = town.getText().toString().trim();
