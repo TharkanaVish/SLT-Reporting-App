@@ -12,6 +12,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -35,6 +36,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -64,6 +66,7 @@ public class Reportbreakdown extends AppCompatActivity {
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     private static final String TAG = Reportbreakdown.class.getSimpleName();
+    public static final int GALLERY_REQUEST_CODE = 105;
     ImageView selectedImage;
     private Button gpsButton;
     private TextView progressTitle;
@@ -77,7 +80,7 @@ public class Reportbreakdown extends AppCompatActivity {
     private LocationManager locManager;
     private Location lastLocation;
     EditText town,vilage,description,location,imageName,imageUrl;
-    Button addtomylist,camera,addtosuplist;
+    Button addtomylist,camera,addtosuplist,gallery;
     Report reportob;
     FirebaseDatabase rootNode;
     DatabaseReference db;
@@ -114,6 +117,7 @@ public class Reportbreakdown extends AppCompatActivity {
         imageName = findViewById(R.id.imageName);
         imageUrl = findViewById(R.id.imageUrl);
         camera = findViewById(R.id.addimage);
+        gallery = findViewById(R.id.gallery);
         addtosuplist = findViewById(R.id.btn_addBreakdownWithAssign);
         addtomylist=findViewById(R.id.addbreakdown);
         gpsButton = findViewById(R.id.gpsButton);
@@ -142,6 +146,14 @@ public class Reportbreakdown extends AppCompatActivity {
             }
         });
 
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(gallery, GALLERY_REQUEST_CODE);
+            }
+        });
+
     }
 
     @Override
@@ -161,6 +173,22 @@ public class Reportbreakdown extends AppCompatActivity {
                 uploadImageToFirebase(f.getName(),contentUri);
             }
         }
+
+        if (requestCode == GALLERY_REQUEST_CODE) {
+            if(resultCode == Activity.RESULT_OK){
+                Uri contentUri = data.getData();
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "JPEG_" + timeStamp + "." + getFileExt(contentUri);
+
+                uploadImageToFirebase(imageFileName,contentUri);
+            }
+        }
+    }
+
+    private String getFileExt(Uri contentUri) {
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(contentUri));
     }
 
     private void uploadImageToFirebase(String name, Uri contentUri) {
