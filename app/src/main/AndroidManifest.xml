@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Viewd"
+            android:exported="true" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="true" />
         <activity
