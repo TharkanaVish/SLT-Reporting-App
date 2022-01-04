@@ -150,7 +150,6 @@ public class Reportbreakdown extends AppCompatActivity {
             if(resultCode == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
                 Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
-                imageName.setText(f.getName());
 
                 Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                 Uri contentUri = Uri.fromFile(f);
@@ -171,6 +170,7 @@ public class Reportbreakdown extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         imgProgressBar.setVisibility(View.INVISIBLE);
+                        imageName.setText(uri.toString());
                         Picasso.get().load(uri).into(selectedImage);
                     }
                 });
