@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -16,7 +17,8 @@ import java.util.HashMap;
 
 public class ViewReportsEdit extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Button gps,img,edit,back;
+    Button gps,edit,back,img;
+    ImageView comimg,beforeimg;
     EditText town,village,desc;
     Spinner superlist;
 
@@ -28,7 +30,9 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         Report emp_edit = (Report)getIntent().getSerializableExtra("EDIT");
 
         gps = findViewById(R.id.btn_addlocation);
-        img = findViewById(R.id.btn_addimage);
+        img = findViewById(R.id.btn_add_completed_image);
+        beforeimg = findViewById(R.id.edit_beoreImage);
+        comimg = findViewById(R.id.edit_afterImage);
         edit = findViewById(R.id.btn_editbreakdown);
         back = findViewById(R.id.btn_viewReport_bck);
         town = findViewById(R.id.et_town);
