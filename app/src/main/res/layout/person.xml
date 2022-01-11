@@ -17,6 +17,22 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/txt_option"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="&#8942;"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/description"
+            app:layout_constraintEnd_toEndOf="@+id/vilage"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/town"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="RtlCompat" />
+
+        <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,13 +45,14 @@
 
         <TextView
             android:id="@+id/town"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="271dp"
+            android:layout_height="23dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
             app:layout_constraintStart_toEndOf="@+id/textView1"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -49,17 +49,7 @@ public class SupervisorMain extends AppCompatActivity {
             }
         });
 
-        sprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                        String emails=editTextTextPersonName5.getText().toString().trim();
 
-                Intent t=new Intent(SupervisorMain.this, ViewEmpProfile.class);
-                t.putExtra("Key5",emails);
-                startActivity(t);
-
-            }
-        });
 
         stask.setOnClickListener(new View.OnClickListener() {
             @Override

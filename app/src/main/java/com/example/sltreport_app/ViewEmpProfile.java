@@ -55,7 +55,7 @@ public class ViewEmpProfile extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     String emp = String.valueOf(snapshot.child("empno").getValue());
-                    String phones = String.valueOf(snapshot.child("number").getValue());
+                    String phone = String.valueOf(snapshot.child("number").getValue());
                     String name = String.valueOf(snapshot.child("name").getValue());
                     String email = String.valueOf(snapshot.child("email").getValue());
                     String uname = String.valueOf(snapshot.child("username").getValue());
