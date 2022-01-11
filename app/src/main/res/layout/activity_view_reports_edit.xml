@@ -50,18 +50,16 @@
                 <TextView
                     android:id="@+id/textView_lgborder"
                     android:layout_width="348dp"
-                    android:layout_height="700dp"
+                    android:layout_height="1000dp"
                     android:layout_marginStart="42dp"
-                    android:layout_marginLeft="42dp"
                     android:layout_marginTop="31dp"
                     android:layout_marginEnd="43dp"
-                    android:layout_marginRight="43dp"
                     android:background="@drawable/border"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/btn_viewReport_bck"
@@ -117,48 +115,25 @@
                     android:textAllCaps="false"
                     android:textColor="#000000"
                     app:backgroundTint="#6cbfb0"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_viewReport_bck"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.508"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.895"
+                    app:layout_constraintVertical_bias="0.982"
                     tools:ignore="OnClick,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_addimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Image"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.604"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.599" />
 
                 <Button
                     android:id="@+id/btn_add_completed_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add Image"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.604"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_afterImage"                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.048"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.696" />
+                    app:layout_constraintTop_toBottomOf="@+id/edit_beoreImage"
 
-                <Button
-                    android:id="@+id/btn_addlocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Location"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.668"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.504" />
+                    app:layout_constraintVertical_bias="0.517" />
 
                 <TextView
                     android:id="@+id/tv_town"
@@ -207,36 +182,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintHorizontal_bias="0.059"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.505" />
-
-                <TextView
-                    android:id="@+id/tv_image"
-                    android:layout_width="130dp"
-                    android:layout_height="30dp"
-                    android:text="Add Image : "
-                    android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.068"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.598" />
-
-                <TextView
-                    android:id="@+id/tv_completed_image"
-                    android:layout_width="127dp"
-                    android:layout_height="51dp"
-                    android:text="Add Completed Image : "
-                    android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.081"
-                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.694" />
+                    app:layout_constraintVertical_bias="0.368" />
 
                 <TextView
                     android:id="@+id/tv_assign_super"
@@ -244,26 +193,26 @@
                     android:layout_height="51dp"
                     android:text="Assign Supervisor : "
                     android:textSize="18dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_editbreakdown"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.081"
+                    app:layout_constraintHorizontal_bias="0.058"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.802" />
+                    app:layout_constraintVertical_bias="0.982" />
 
                 <EditText
                     android:id="@+id/et_description"
-                    android:layout_width="183dp"
-                    android:layout_height="145dp"
+                    android:layout_width="163dp"
+                    android:layout_height="72dp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.878"
+                    app:layout_constraintHorizontal_bias="0.81"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.311"
+                    app:layout_constraintVertical_bias="0.275"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Spinner
@@ -272,14 +221,49 @@
                     android:layout_height="46dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
+                    android:entries="@array/Supervisors_List"
                     app:layout_constraintBottom_toTopOf="@+id/btn_editbreakdown"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.545"
+                    app:layout_constraintHorizontal_bias="0.812"
                     app:layout_constraintStart_toEndOf="@+id/tv_assign_super"
                     app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
-                    app:layout_constraintVertical_bias="0.0"
-                    android:entries="@array/Supervisors_List"/>
+                    app:layout_constraintVertical_bias="0.881" />
+
+                <ImageView
+                    android:id="@+id/edit_beoreImage"
+                    android:layout_width="320dp"
+                    android:layout_height="151dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_add_completed_image"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_gps"
+                    app:layout_constraintHorizontal_bias="0.812"
+                    app:layout_constraintVertical_bias="0.881"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/edit_afterImage"
+                    android:layout_width="320dp"
+                    android:layout_height="151dp"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_assign_super"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
+                    app:layout_constraintHorizontal_bias="0.812"
+                    app:layout_constraintVertical_bias="0.881"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <Button
+                    android:id="@+id/btn_gps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="View Location"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_beoreImage"
+                    app:layout_constraintStart_toEndOf="@+id/tv_gps"
+                    app:layout_constraintTop_toBottomOf="@+id/et_description"
+                    app:layout_constraintVertical_bias="0.882" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
