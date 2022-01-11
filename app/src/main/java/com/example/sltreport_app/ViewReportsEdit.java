@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class ViewReportsEdit extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Button gps,img,edit,back;
@@ -22,6 +24,8 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reports_edit);
+        DAOEmployee dao =new DAOEmployee();
+        Report emp_edit = (Report)getIntent().getSerializableExtra("EDIT");
 
         gps = findViewById(R.id.btn_addlocation);
         img = findViewById(R.id.btn_addimage);
@@ -43,8 +47,19 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
                 startActivity(new Intent(ViewReportsEdit.this, SupervisorMain.class));
             }
         });
-
+        town.setText(emp_edit.getTown());
+        village.setText(emp_edit.getVilage());
+        desc.setText(emp_edit.getDescription());
         superlist.setOnItemSelectedListener(this);
+
+
+
+
+
+
+
+
+
     }
 
     @Override

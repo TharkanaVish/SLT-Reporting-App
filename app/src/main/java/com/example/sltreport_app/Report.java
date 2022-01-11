@@ -1,21 +1,31 @@
 package com.example.sltreport_app;
+import java.io.Serializable;
+import com.google.firebase.database.Exclude;
 
-public class Report {
+public class Report implements Serializable{
+    @Exclude
+    private String key;
 
     private String town;
     private String vilage;
     private String description;
     private String location;
     private String imageName;
-
+    private String superViser;
     public Report(){}
-    public Report(String town,String vilage,String description){
+
+
+
+    public Report(String town, String vilage, String description){
         this.town=town;
         this.vilage=vilage;
         this.description=description;
         this.location=location;
         this.imageName=imageName;
+        this.superViser=superViser;
     }
+
+
 
     //getters
 
@@ -35,7 +45,13 @@ public class Report {
 
     public String getImageName(){return imageName;}
     //setters
+    public String getSuperViser() {
+        return superViser;
+    }
 
+    public void setSuperViser(String superViser) {
+        this.superViser = superViser;
+    }
     public void setTown(String town) {
         this.town = town;
     }
@@ -51,4 +67,13 @@ public class Report {
     public void setLocation(String location){this.location=location;}
 
     public void setImageName(String imageName) { this.imageName = imageName; }
+    public String getKey()
+    {
+        return key;
+    }
+
+    public void setKey(String key)
+    {
+        this.key = key;
+    }
 }
