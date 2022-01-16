@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Reportbreakdown">
+    tools:context=".ViewReportsEdit">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/btn_viewReport_bck"
@@ -86,10 +86,10 @@
                     android:hint="Town Name"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintHorizontal_bias="0.88"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.053"
+                    app:layout_constraintVertical_bias="0.021"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <EditText
@@ -100,10 +100,10 @@
                     android:hint="Village/Road Name"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintHorizontal_bias="0.937"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.165"
+                    app:layout_constraintVertical_bias="0.073"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <Button
@@ -128,8 +128,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add Image"
-                    app:layout_constraintBottom_toTopOf="@+id/edit_afterImage"                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.048"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_afterImage"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.104"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/edit_beoreImage"
 
@@ -143,10 +144,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.212"
+                    app:layout_constraintHorizontal_bias="0.118"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.053" />
+                    app:layout_constraintVertical_bias="0.02" />
 
                 <TextView
                     android:id="@+id/tv_village"
@@ -156,10 +157,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintHorizontal_bias="0.045"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.176" />
+                    app:layout_constraintVertical_bias="0.081" />
 
                 <TextView
                     android:id="@+id/tv_description"
@@ -169,10 +170,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintHorizontal_bias="0.045"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.258" />
+                    app:layout_constraintVertical_bias="0.134" />
 
                 <TextView
                     android:id="@+id/tv_gps"
@@ -182,10 +183,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.059"
+                    app:layout_constraintHorizontal_bias="0.105"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.368" />
+                    app:layout_constraintVertical_bias="0.232" />
 
                 <TextView
                     android:id="@+id/tv_assign_super"
@@ -202,17 +203,17 @@
 
                 <EditText
                     android:id="@+id/et_description"
-                    android:layout_width="163dp"
-                    android:layout_height="72dp"
+                    android:layout_width="174dp"
+                    android:layout_height="74dp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
                     app:layout_constraintBottom_toBottomOf="@+id/textView_lgborder"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.81"
+                    app:layout_constraintHorizontal_bias="0.867"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.275"
+                    app:layout_constraintVertical_bias="0.143"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Spinner
@@ -233,12 +234,11 @@
                     android:id="@+id/edit_beoreImage"
                     android:layout_width="320dp"
                     android:layout_height="151dp"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintBottom_toTopOf="@+id/btn_add_completed_image"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/tv_gps"
-                    app:layout_constraintHorizontal_bias="0.812"
                     app:layout_constraintVertical_bias="0.881"
                     tools:srcCompat="@tools:sample/avatars" />
 
@@ -256,14 +256,19 @@
 
                 <Button
                     android:id="@+id/btn_addlocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="211dp"
+                    android:layout_height="42dp"
                     android:layout_marginStart="8dp"
+                    android:onClick="browser1"
                     android:text="View Location"
                     app:layout_constraintBottom_toTopOf="@+id/edit_beoreImage"
-                    app:layout_constraintStart_toEndOf="@+id/tv_gps"
+                    app:layout_constraintEnd_toEndOf="@+id/edit_beoreImage"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_gps"
                     app:layout_constraintTop_toBottomOf="@+id/et_description"
-                    app:layout_constraintVertical_bias="0.882" />
+                    app:layout_constraintVertical_bias="0.75" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
