@@ -42,7 +42,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         DAOEmployee dao =new DAOEmployee();
         Report emp_edit = (Report)getIntent().getSerializableExtra("EDIT");
         StorageReference storageReference =  FirebaseStorage.getInstance().getReference().child("imageName");
-
+//names
         gps = findViewById(R.id.btn_addlocation);
         img = findViewById(R.id.btn_add_completed_image);
         comimg = findViewById(R.id.edit_afterImage);
