@@ -198,7 +198,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     }
 
     private void uploadImageToFirebase(String name, Uri contentUri) {
-        StorageReference image = storageReference.child("images/" + name);
+        StorageReference image = storageReference.child("Completed_images/" + name);
         image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
