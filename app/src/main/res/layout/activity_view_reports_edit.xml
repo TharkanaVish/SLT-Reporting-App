@@ -59,7 +59,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/btn_viewReport_bck"
@@ -125,16 +125,16 @@
 
                 <Button
                     android:id="@+id/btn_add_completed_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Image"
+                    android:layout_width="99dp"
+                    android:layout_height="53dp"
+                    android:text="Add From Camera"
                     app:layout_constraintBottom_toTopOf="@+id/edit_afterImage"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.104"
+                    app:layout_constraintHorizontal_bias="0.052"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/edit_beoreImage"
 
-                    app:layout_constraintVertical_bias="0.517" />
+                    app:layout_constraintVertical_bias="0.3" />
 
                 <TextView
                     android:id="@+id/tv_town"
@@ -225,10 +225,10 @@
                     android:entries="@array/Supervisors_List"
                     app:layout_constraintBottom_toTopOf="@+id/btn_editbreakdown"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.812"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/tv_assign_super"
                     app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
-                    app:layout_constraintVertical_bias="0.881" />
+                    app:layout_constraintVertical_bias="0.92" />
 
                 <ImageView
                     android:id="@+id/edit_beoreImage"
@@ -247,12 +247,10 @@
                     android:id="@+id/edit_afterImage"
                     android:layout_width="320dp"
                     android:layout_height="151dp"
-                    android:layout_marginStart="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_assign_super"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
-                    app:layout_constraintHorizontal_bias="0.812"
-                    app:layout_constraintVertical_bias="0.881"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <Button
@@ -269,6 +267,42 @@
                     app:layout_constraintTop_toBottomOf="@+id/et_description"
                     app:layout_constraintVertical_bias="0.75" />
 
+                <Button
+                    android:id="@+id/btn_comImg_gallery"
+                    android:layout_width="99dp"
+                    android:layout_height="53dp"
+                    android:layout_marginStart="124dp"
+                    android:layout_marginTop="44dp"
+                    android:text="Add from Gallery"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_afterImage"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/btn_add_completed_image"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_beoreImage"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <EditText
+                    android:id="@+id/ComimgUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_assign_super"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_afterImage" />
+
+                <ProgressBar
+                    android:id="@+id/ComImg_progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/edit_afterImage"
+                    app:layout_constraintEnd_toEndOf="@+id/edit_afterImage"
+                    app:layout_constraintStart_toStartOf="@+id/edit_afterImage"
+                    app:layout_constraintTop_toTopOf="@+id/edit_afterImage" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
