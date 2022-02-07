@@ -12,16 +12,20 @@ public class Report implements Serializable{
     private String location;
     private String imageName;
     private String superViser;
+    private String doneimageName;
+
     public Report(){}
 
 
 
-    public Report(String town, String vilage, String description){
+
+    public Report(String town, String vilage, String description,String superViser){
         this.town=town;
         this.vilage=vilage;
         this.description=description;
         this.location=location;
         this.imageName=imageName;
+        this.doneimageName=doneimageName;
         this.superViser=superViser;
     }
 
@@ -44,13 +48,24 @@ public class Report implements Serializable{
     public String getLocation(){return location;}
 
     public String getImageName(){return imageName;}
-    //setters
+
     public String getSuperViser() {
         return superViser;
     }
 
+
+    public String getDoneimageName() {
+        return doneimageName;
+    }
+
+
+    //setters
+
     public void setSuperViser(String superViser) {
         this.superViser = superViser;
+    }
+    public void setDoneimageName(String doneimageName) {
+        this.doneimageName = doneimageName;
     }
     public void setTown(String town) {
         this.town = town;

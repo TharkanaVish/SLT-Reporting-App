@@ -60,6 +60,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     EditText village;
     EditText desc;
     EditText CompletedimgUrl;
+    EditText supervisor2;
     Spinner superlist;
     String currentPhotoPath;
     StorageReference storageReference;
@@ -80,6 +81,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         edit = findViewById(R.id.btn_editbreakdown);
         back = findViewById(R.id.btn_viewReport_bck);
         town = findViewById(R.id.et_town);
+        supervisor2=findViewById(R.id.supervisor2);
         village = findViewById(R.id.et_vilage);
         desc = findViewById(R.id.et_description);
         superlist = findViewById(R.id.sp_assign_super);
@@ -135,15 +137,17 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         village.setText(emp_edit.getVilage());
         desc.setText(emp_edit.getDescription());
         gps.setText(emp_edit.getLocation());
+        supervisor2.setText((emp_edit.getSuperViser()));
         superlist.setOnItemSelectedListener(this);
         
     edit.setOnClickListener(v->
     {
-        Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString());
+        Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("town", town.getText().toString());
         hashMap.put("vilage", village.getText().toString());
         hashMap.put("description", desc.getText().toString());
+        hashMap.put("supervisor", supervisor2.getText().toString());
         dao.update(emp_edit.getKey(), hashMap).addOnSuccessListener(suc ->
         {
             Toast.makeText(this, "Record is updated", Toast.LENGTH_SHORT).show();
@@ -198,7 +202,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     }
 
     private void uploadImageToFirebase(String name, Uri contentUri) {
-        StorageReference image = storageReference.child("Completed_images/" + name);
+        StorageReference image = storageReference.child("images/" + name);
         image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

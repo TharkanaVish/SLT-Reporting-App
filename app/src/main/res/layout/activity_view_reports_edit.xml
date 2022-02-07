@@ -59,7 +59,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/btn_viewReport_bck"
@@ -225,10 +225,10 @@
                     android:entries="@array/Supervisors_List"
                     app:layout_constraintBottom_toTopOf="@+id/btn_editbreakdown"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.812"
                     app:layout_constraintStart_toEndOf="@+id/tv_assign_super"
                     app:layout_constraintTop_toBottomOf="@+id/btn_add_completed_image"
-                    app:layout_constraintVertical_bias="0.92" />
+                    app:layout_constraintVertical_bias="0.822" />
 
                 <ImageView
                     android:id="@+id/edit_beoreImage"
@@ -290,9 +290,9 @@
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toTopOf="@+id/tv_assign_super"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.503"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_afterImage" />
+                    app:layout_constraintTop_toBottomOf="@+id/edit_afterImage"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ProgressBar
                     android:id="@+id/ComImg_progressBar"
@@ -303,6 +303,21 @@
                     app:layout_constraintEnd_toEndOf="@+id/edit_afterImage"
                     app:layout_constraintStart_toStartOf="@+id/edit_afterImage"
                     app:layout_constraintTop_toTopOf="@+id/edit_afterImage" />
+
+                <EditText
+                    android:id="@+id/supervisor2"
+                    android:layout_width="173dp"
+                    android:layout_height="45dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+
+                    app:layout_constraintBottom_toTopOf="@+id/btn_viewReport_bck"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.919"
+                    app:layout_constraintStart_toStartOf="@+id/tv_assign_super"
+                    app:layout_constraintTop_toTopOf="@+id/ComimgUrl"
+                    app:layout_constraintVertical_bias="0.557" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

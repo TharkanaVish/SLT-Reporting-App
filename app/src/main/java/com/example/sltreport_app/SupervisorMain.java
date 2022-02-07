@@ -45,7 +45,8 @@ public class SupervisorMain extends AppCompatActivity {
         sviewreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SupervisorMain.this, RVActivity.class));
+                startActivity(new Intent(SupervisorMain.this, RVActivity
+                        .class));
             }
         });
 
