@@ -36,6 +36,14 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/txt_position"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Text"
+                android:textSize="20sp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/txt_assigns"
+                />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

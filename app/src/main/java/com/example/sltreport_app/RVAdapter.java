@@ -47,6 +47,7 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         Report emp = e==null? list.get(position):e;
         vh.txt_name.setText(emp.getTown());
         vh.txt_position.setText(emp.getVilage());
+        vh.txt_assigns.setText(emp.getSuperViser());
         vh.txt_option.setOnClickListener(v->
         {
             PopupMenu popupMenu =new PopupMenu(context,vh.txt_option);
