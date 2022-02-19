@@ -63,14 +63,14 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     EditText supervisor2;
     Spinner superlist;
     String currentPhotoPath;
-    StorageReference storageReference;
+    StorageReference storageReference =  FirebaseStorage.getInstance().getReference();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reports_edit);
         DAOEmployee dao =new DAOEmployee();
         Report emp_edit = (Report)getIntent().getSerializableExtra("EDIT");
-        StorageReference storageReference =  FirebaseStorage.getInstance().getReference().child("imageName");
 //names
         gps = findViewById(R.id.btn_addlocation);
         img = findViewById(R.id.btn_add_completed_image);
@@ -90,6 +90,8 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         DatabaseReference databaseReference = firebaseDatabase.getReference();
         DatabaseReference getImage = databaseReference.child("images");
 
+        completedImgProgress.setVisibility(View.INVISIBLE);
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Supervisors_List,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -100,8 +102,21 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
             public void onClick(View view) {
                 startActivity(new Intent(ViewReportsEdit.this, SupervisorMain.class));
             }
+        });
 
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                askCameraPermissions();
+            }
+        });
 
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(gallery, GALLERY_REQUEST_CODE);
+            }
         });
 
         getImage.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -145,7 +160,116 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
 
     });
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            if(resultCode == Activity.RESULT_OK){
+                File f = new File(currentPhotoPath);
+                Log.d("tag","Absolute URI of the image is " + Uri.fromFile(f));
+                //imageName.setText(f.getName());
+
+                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                Uri contentUri = Uri.fromFile(f);
+                mediaScanIntent.setData(contentUri);
+                this.sendBroadcast(mediaScanIntent);
+
+                uploadImageToFirebase(f.getName(),contentUri);
+            }
+        }
+
+        if (requestCode == GALLERY_REQUEST_CODE) {
+            if(resultCode == Activity.RESULT_OK){
+                Uri contentUri = data.getData();
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "JPEG_" + timeStamp + "." + getFileExt(contentUri);
+
+                uploadImageToFirebase(imageFileName,contentUri);
+            }
+        }
+    }
+
+    private String getFileExt(Uri contentUri) {
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(contentUri));
+    }
+
+    private void uploadImageToFirebase(String name, Uri contentUri) {
+        StorageReference image = storageReference.child("completed_images/" + name);
+        image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        completedImgProgress.setVisibility(View.INVISIBLE);
+                        CompletedimgUrl.setText(uri.toString());
+                        Picasso.get().load(uri).into(comimg);
+                    }
+                });
+                Toast.makeText(ViewReportsEdit.this,"Image Uploaded successfully",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                completedImgProgress.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                completedImgProgress.setVisibility(View.INVISIBLE);
+                Toast.makeText(ViewReportsEdit.this,"Upload failed",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void askCameraPermissions() {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
+        }else{
+            dispatchTakePictureIntent();
+        }
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.example.android.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
+            }
+        }
     }
 
     @Override
