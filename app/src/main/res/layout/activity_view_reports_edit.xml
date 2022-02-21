@@ -111,7 +111,7 @@
                     android:layout_width="299dp"
                     android:layout_height="44dp"
                     android:background="@drawable/textborder"
-                    android:text="Edit Breakdown"
+                    android:text="Complete Breakdown"
                     android:textAllCaps="false"
                     android:textColor="#000000"
                     app:backgroundTint="#6cbfb0"
