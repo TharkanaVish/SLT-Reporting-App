@@ -5,11 +5,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ContentResolver;
@@ -154,6 +157,25 @@ public class Reportbreakdown extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    // Creates and displays a notification
+    private void addNotification() {
+        // Builds your notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.edd)
+                .setContentTitle("SIRK APP Notification")
+                .setContentText("Report has been added Successfully!!!!!");
+
+        // Creates the intent needed to show the notification
+        Intent notificationIntent = new Intent(Reportbreakdown.this, Employeemain.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
     }
 
     @Override
@@ -292,10 +314,8 @@ public class Reportbreakdown extends AppCompatActivity {
             reportob.setDescription(description.getText().toString().trim());
             reportob.setLocation(location.getText().toString().trim());
             reportob.setImageName(imageUrl.getText().toString().trim());
-
-
             String Name = town.getText().toString().trim();
-
+            addNotification();
 
             db.child(Name).setValue(reportob);
 
