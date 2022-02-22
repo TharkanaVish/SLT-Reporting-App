@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -150,7 +154,8 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         hashMap.put("supervisor", supervisor2.getText().toString());
         dao.update(emp_edit.getKey(), hashMap).addOnSuccessListener(suc ->
         {
-            Toast.makeText(this, "Record is updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Record is Completed", Toast.LENGTH_SHORT).show();
+            addNotification();
             finish();
             
         }).addOnFailureListener(er ->
@@ -160,6 +165,24 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
 
     });
 
+    }
+
+    // Creates and displays a notification
+    private void addNotification() {
+        // Builds your notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.edd)
+                .setContentTitle("SIRK APP Notification")
+                .setContentText("Report completed Successfully!!!!!");
+
+        // Creates the intent needed to show the notification
+        Intent notificationIntent = new Intent(ViewReportsEdit.this, Employeemain.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
     }
 
     @Override
