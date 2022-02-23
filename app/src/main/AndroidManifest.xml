@@ -22,6 +22,9 @@
             android:name=".RVActivity"
             android:exported="true" />
         <activity
+            android:name=".SVActivity"
+            android:exported="true" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="true" />
         <activity

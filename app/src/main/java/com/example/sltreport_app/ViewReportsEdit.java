@@ -142,8 +142,9 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         desc.setText(emp_edit.getDescription());
         gps.setText(emp_edit.getLocation());
         supervisor2.setText((emp_edit.getSuperViser()));
+        CompletedimgUrl.setText((emp_edit.getCompletedimgUrl()));
         superlist.setOnItemSelectedListener(this);
-        
+
     edit.setOnClickListener(v->
     {
         Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
@@ -152,6 +153,8 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         hashMap.put("vilage", village.getText().toString());
         hashMap.put("description", desc.getText().toString());
         hashMap.put("supervisor", supervisor2.getText().toString());
+        hashMap.put("CompletedimgUrl", CompletedimgUrl.getText().toString());
+
         dao.update(emp_edit.getKey(), hashMap).addOnSuccessListener(suc ->
         {
             Toast.makeText(this, "Record is Completed", Toast.LENGTH_SHORT).show();
@@ -229,7 +232,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
                     @Override
                     public void onSuccess(Uri uri) {
                         completedImgProgress.setVisibility(View.INVISIBLE);
-                        CompletedimgUrl.setText(uri.toString());
+                         CompletedimgUrl.setText(uri.toString());
                         Picasso.get().load(uri).into(comimg);
                     }
                 });

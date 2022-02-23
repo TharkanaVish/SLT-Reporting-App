@@ -12,7 +12,7 @@ public class Report implements Serializable{
     private String location;
     private String imageName;
     private String superViser;
-    private String doneimageName;
+    private String CompletedimgUrl;
 
     public Report(){}
 
@@ -25,7 +25,7 @@ public class Report implements Serializable{
         this.description=description;
         this.location=location;
         this.imageName=imageName;
-        this.doneimageName=doneimageName;
+        this.CompletedimgUrl=CompletedimgUrl;
         this.superViser=superViser;
     }
 
@@ -54,8 +54,8 @@ public class Report implements Serializable{
     }
 
 
-    public String getDoneimageName() {
-        return doneimageName;
+    public String getCompletedimgUrl() {
+        return CompletedimgUrl;
     }
 
 
@@ -64,8 +64,8 @@ public class Report implements Serializable{
     public void setSuperViser(String superViser) {
         this.superViser = superViser;
     }
-    public void setDoneimageName(String doneimageName) {
-        this.doneimageName = doneimageName;
+    public void setCompletedimgUrl(String CompletedimgUrl) {
+        this.CompletedimgUrl = CompletedimgUrl;
     }
     public void setTown(String town) {
         this.town = town;
@@ -91,4 +91,6 @@ public class Report implements Serializable{
     {
         this.key = key;
     }
+
+
 }

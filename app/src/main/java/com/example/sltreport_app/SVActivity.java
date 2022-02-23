@@ -27,9 +27,9 @@ public class SVActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv);
-        swipeRefreshLayout = findViewById(R.id.swip);
-        recyclerView = findViewById(R.id.rv);
+        setContentView(R.layout.activity_sv);
+        swipeRefreshLayout = findViewById(R.id.swipsv);
+        recyclerView = findViewById(R.id.sv);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);

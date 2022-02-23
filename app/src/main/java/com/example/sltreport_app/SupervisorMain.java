@@ -55,11 +55,7 @@ public class SupervisorMain extends AppCompatActivity {
         stask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent asignview = new Intent(SupervisorMain.this, SVActivity.class);
-                setResult(RESULT_OK, null);
-                asignview.putExtra("Keys1",email);
-                startActivity(asignview);
-                SupervisorMain.this.finish();
+                startActivity(new Intent(SupervisorMain.this, SVActivity.class));
             }
         });
 
