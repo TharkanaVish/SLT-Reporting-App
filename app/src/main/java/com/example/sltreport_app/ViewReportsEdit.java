@@ -141,11 +141,11 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         village.setText(emp_edit.getVilage());
         desc.setText(emp_edit.getDescription());
         gps.setText(emp_edit.getLocation());
-        supervisor2.setText((emp_edit.getSuperViser()));
         CompletedimgUrl.setText((emp_edit.getCompletedimgUrl()));
         superlist.setOnItemSelectedListener(this);
+        supervisor2.setText((emp_edit.getSuperViser()));
 
-    edit.setOnClickListener(v->
+        edit.setOnClickListener(v->
     {
         Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
         HashMap<String, Object> hashMap = new HashMap<>();
