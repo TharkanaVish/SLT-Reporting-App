@@ -38,7 +38,12 @@ public class SupervisorMain extends AppCompatActivity {
         sreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SupervisorMain.this, Reportbreakdown.class));
+                Intent reportactivity = new Intent(SupervisorMain.this, Reportbreakdown.class);
+                setResult(RESULT_OK, null);
+                reportactivity.putExtra("Key11",email);
+
+                startActivity(reportactivity);
+                SupervisorMain.this.finish();
             }
         });
 

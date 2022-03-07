@@ -136,6 +136,28 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
 
             }
         });
+        edit.setOnClickListener(v->
+        {
+            Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("town", town.getText().toString());
+            hashMap.put("vilage", village.getText().toString());
+            hashMap.put("description", desc.getText().toString());
+            hashMap.put("supervisor", supervisor2.getText().toString());
+            hashMap.put("CompletedimgUrl", CompletedimgUrl.getText().toString());
+
+            dao.update(emp_edit.getKey(), hashMap).addOnSuccessListener(suc ->
+            {
+                Toast.makeText(this, "Record is Completed", Toast.LENGTH_SHORT).show();
+                addNotification();
+                finish();
+
+            }).addOnFailureListener(er ->
+            {
+                Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+
+        });
 
         town.setText(emp_edit.getTown());
         village.setText(emp_edit.getVilage());
@@ -145,28 +167,6 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         superlist.setOnItemSelectedListener(this);
         supervisor2.setText((emp_edit.getSuperViser()));
 
-        edit.setOnClickListener(v->
-    {
-        Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("town", town.getText().toString());
-        hashMap.put("vilage", village.getText().toString());
-        hashMap.put("description", desc.getText().toString());
-        hashMap.put("supervisor", supervisor2.getText().toString());
-        hashMap.put("CompletedimgUrl", CompletedimgUrl.getText().toString());
-
-        dao.update(emp_edit.getKey(), hashMap).addOnSuccessListener(suc ->
-        {
-            Toast.makeText(this, "Record is Completed", Toast.LENGTH_SHORT).show();
-            addNotification();
-            finish();
-            
-        }).addOnFailureListener(er ->
-        {
-            Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
-        });
-
-    });
 
     }
 

@@ -82,7 +82,7 @@ public class Reportbreakdown extends AppCompatActivity {
 
     private LocationManager locManager;
     private Location lastLocation;
-    EditText town,vilage,description,location,imageName,imageUrl;
+    EditText town,vilage,description,location,imageName,imageUrl,Email;
     Button addtomylist,camera,addtosuplist,gallery;
     Report reportob;
     FirebaseDatabase rootNode;
@@ -114,6 +114,8 @@ public class Reportbreakdown extends AppCompatActivity {
         setContentView(R.layout.activity_reportbreakdown);
         setTitle(R.string.app_name);
         location=findViewById(R.id.location);
+        Email=findViewById(R.id.Email);
+
         town= findViewById(R.id.town);
         vilage=findViewById(R.id.vilage);
         description=findViewById(R.id.editTextTextMultiLine);
@@ -141,7 +143,11 @@ public class Reportbreakdown extends AppCompatActivity {
 
         storageReference = FirebaseStorage.getInstance().getReference();
 
+        String email = getIntent().getStringExtra("Key11");
+        String phone = getIntent().getStringExtra("Key12");
 
+        Email.setText(email);
+        Email.setText(phone);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
