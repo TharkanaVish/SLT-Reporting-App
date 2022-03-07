@@ -36,6 +36,9 @@ public class SVActivity extends AppCompatActivity {
         adapter= new SVAdapter(this);
         recyclerView.setAdapter(adapter);
         dao = new DAOEmployee();
+        String email = getIntent().getStringExtra("Key4");
+
+
         loadData();
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener()
         {

@@ -49,7 +49,12 @@ public class Employeemain extends AppCompatActivity {
         eviewreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Employeemain.this, ViewAddedReports.class));
+                Intent ViewAddedReports = new Intent(Employeemain.this, ViewAddedReports.class);
+                setResult(RESULT_OK, null);
+                ViewAddedReports.putExtra("Key13",phone);
+
+                startActivity(ViewAddedReports);
+                Employeemain.this.finish();
             }
         });
 
