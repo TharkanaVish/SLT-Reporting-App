@@ -60,7 +60,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
     ProgressBar completedImgProgress;
     Button gps,edit,back,img,gallery;
     ImageView comimg,beoreImage;
-    EditText town;
+    EditText town,addedby;
     EditText village;
     EditText desc;
     EditText CompletedimgUrl;
@@ -79,6 +79,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         gps = findViewById(R.id.btn_addlocation);
         img = findViewById(R.id.btn_add_completed_image);
         gallery = findViewById(R.id.btn_comImg_gallery);
+        addedby =findViewById(R.id.Addedby);
         completedImgProgress = findViewById(R.id.ComImg_progressBar);
         CompletedimgUrl = findViewById(R.id.ComimgUrl);
         comimg = findViewById(R.id.edit_afterImage);
@@ -138,7 +139,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         });
         edit.setOnClickListener(v->
         {
-            Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString());
+            Report emp = new Report(town.getText().toString(), village.getText().toString(),desc.getText().toString() ,supervisor2.getText().toString(),addedby.getText().toString());
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("town", town.getText().toString());
             hashMap.put("vilage", village.getText().toString());
@@ -164,6 +165,7 @@ public class ViewReportsEdit extends AppCompatActivity implements AdapterView.On
         desc.setText(emp_edit.getDescription());
         gps.setText(emp_edit.getLocation());
         CompletedimgUrl.setText((emp_edit.getCompletedimgUrl()));
+        addedby.setText((emp_edit.getAddedby()));
         superlist.setOnItemSelectedListener(this);
         supervisor2.setText((emp_edit.getSuperViser()));
 

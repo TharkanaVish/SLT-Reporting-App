@@ -49,15 +49,15 @@
 
                 <TextView
                     android:id="@+id/textView_lgborder"
-                    android:layout_width="339dp"
-                    android:layout_height="1000dp"
+                    android:layout_width="357dp"
+                    android:layout_height="1097dp"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="43dp"
                     android:background="@drawable/border"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.461"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
@@ -240,10 +240,10 @@
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.093"
+                    app:layout_constraintHorizontal_bias="0.095"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.808" />
+                    app:layout_constraintVertical_bias="0.781" />
 
                 <Button
                     android:id="@+id/gallery"
@@ -253,10 +253,10 @@
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.098"
+                    app:layout_constraintHorizontal_bias="0.097"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.866" />
+                    app:layout_constraintVertical_bias="0.818" />
 
                 <TextView
                     android:id="@+id/townn"
@@ -328,7 +328,7 @@
                     android:id="@+id/imageName"
                     android:layout_width="162dp"
                     android:layout_height="33dp"
-                    android:layout_marginStart="156dp"
+                    android:layout_marginStart="148dp"
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -338,13 +338,13 @@
                     app:layout_constraintBottom_toTopOf="@+id/addbreakdown"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/imgView_camera"
-                    app:layout_constraintVertical_bias="0.139" />
+                    app:layout_constraintVertical_bias="0.115" />
 
                 <EditText
                     android:id="@+id/imageUrl"
                     android:layout_width="162dp"
                     android:layout_height="33dp"
-                    android:layout_marginStart="156dp"
+                    android:layout_marginStart="144dp"
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -354,7 +354,22 @@
                     app:layout_constraintBottom_toTopOf="@+id/addbreakdown"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/imgView_camera"
-                    app:layout_constraintVertical_bias="0.848" />
+                    app:layout_constraintVertical_bias="0.471" />
+
+                <EditText
+                    android:id="@+id/superv"
+                    android:layout_width="169dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="148dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="supervisour"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/addbreakdown"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/imageUrl"
+                    app:layout_constraintVertical_bias="0.762" />
 
                 <EditText
                     android:id="@+id/editTextTextMultiLine"
@@ -379,6 +394,18 @@
                     android:foregroundGravity="center_horizontal"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/imgView_camera" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="100dp"
+                    android:layout_height="32dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toTopOf="@+id/addbreakdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.104"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toBottomOf="@+id/addimage"
+                    app:layout_constraintVertical_bias="0.675" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

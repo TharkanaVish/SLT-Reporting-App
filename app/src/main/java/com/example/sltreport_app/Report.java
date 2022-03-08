@@ -13,13 +13,13 @@ public class Report implements Serializable{
     private String imageName;
     private String superViser;
     private String CompletedimgUrl;
-
+    private String addedby;
     public Report(){}
 
 
 
 
-    public Report(String town, String vilage, String description,String superViser){
+    public Report(String town, String vilage, String description, String superViser, String addedby){
         this.town=town;
         this.vilage=vilage;
         this.description=description;
@@ -27,6 +27,7 @@ public class Report implements Serializable{
         this.imageName=imageName;
         this.CompletedimgUrl=CompletedimgUrl;
         this.superViser=superViser;
+        this.addedby=addedby;
     }
 
 
@@ -58,6 +59,10 @@ public class Report implements Serializable{
         return CompletedimgUrl;
     }
 
+    public String getAddedby() {
+        return addedby;
+    }
+
 
     //setters
 
@@ -86,7 +91,9 @@ public class Report implements Serializable{
     {
         return key;
     }
-
+    public void setAddedby(String addedby) {
+        this.addedby = addedby;
+    }
     public void setKey(String key)
     {
         this.key = key;

@@ -82,7 +82,7 @@ public class Reportbreakdown extends AppCompatActivity {
 
     private LocationManager locManager;
     private Location lastLocation;
-    EditText town,vilage,description,location,imageName,imageUrl,Email;
+    EditText town,vilage,description,location,imageName,imageUrl,Email,superv;
     Button addtomylist,camera,addtosuplist,gallery;
     Report reportob;
     FirebaseDatabase rootNode;
@@ -134,7 +134,7 @@ public class Reportbreakdown extends AppCompatActivity {
         viewButton = findViewById(R.id.viewButton);
         selectedImage = findViewById(R.id.imgView_camera);
         imgProgressBar = findViewById(R.id.imgPrograssBar);
-
+        superv=findViewById(R.id.superv);
         imgProgressBar.setVisibility(View.INVISIBLE);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
@@ -320,6 +320,8 @@ public class Reportbreakdown extends AppCompatActivity {
             reportob.setDescription(description.getText().toString().trim());
             reportob.setLocation(location.getText().toString().trim());
             reportob.setImageName(imageUrl.getText().toString().trim());
+            reportob.setAddedby(Email.getText().toString().trim());
+            reportob.setSuperViser(superv.getText().toString().trim());
             String Name = town.getText().toString().trim();
             addNotification();
 
@@ -328,7 +330,7 @@ public class Reportbreakdown extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Report Added",Toast.LENGTH_LONG).show();
 
 
-            startActivity(new Intent(Reportbreakdown.this, Employeemain.class));
+            startActivity(new Intent(Reportbreakdown.this, Login.class));
 
 
 
@@ -349,6 +351,9 @@ public class Reportbreakdown extends AppCompatActivity {
         description.setText("");
         location.setText("");
         imageName.setText("");
+        Email.setText("");
+        superv.setText("");
+
     }
 
 

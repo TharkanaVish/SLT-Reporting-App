@@ -49,8 +49,8 @@
 
                 <TextView
                     android:id="@+id/textView_lgborder"
-                    android:layout_width="348dp"
-                    android:layout_height="1000dp"
+                    android:layout_width="350dp"
+                    android:layout_height="1057dp"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="31dp"
                     android:layout_marginEnd="43dp"
@@ -90,6 +90,20 @@
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
                     app:layout_constraintVertical_bias="0.021"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/Addedby"
+                    android:layout_width="159dp"
+                    android:layout_height="42dp"
+                    android:ems="10"
+                    android:hint="added by"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_beoreImage"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
+                    app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
+                    app:layout_constraintVertical_bias="0.72"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
                 <EditText
@@ -183,10 +197,10 @@
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView_lgborder"
-                    app:layout_constraintHorizontal_bias="0.105"
+                    app:layout_constraintHorizontal_bias="0.064"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toTopOf="@+id/textView_lgborder"
-                    app:layout_constraintVertical_bias="0.232" />
+                    app:layout_constraintVertical_bias="0.281" />
 
                 <TextView
                     android:id="@+id/tv_assign_super"
@@ -239,8 +253,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/btn_add_completed_image"
                     app:layout_constraintStart_toStartOf="@+id/textView_lgborder"
                     app:layout_constraintTop_toBottomOf="@+id/tv_gps"
-                    app:layout_constraintHorizontal_bias="0.812"
-                    app:layout_constraintVertical_bias="0.881"
+                    app:layout_constraintVertical_bias="0.890"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageView
@@ -262,10 +275,10 @@
                     android:text="View Location"
                     app:layout_constraintBottom_toTopOf="@+id/edit_beoreImage"
                     app:layout_constraintEnd_toEndOf="@+id/edit_beoreImage"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_gps"
                     app:layout_constraintTop_toBottomOf="@+id/et_description"
-                    app:layout_constraintVertical_bias="0.75" />
+                    app:layout_constraintVertical_bias="0.945" />
 
                 <Button
                     android:id="@+id/btn_comImg_gallery"
