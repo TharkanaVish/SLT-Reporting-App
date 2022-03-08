@@ -28,12 +28,10 @@ public class SupervisorMain extends AppCompatActivity {
 
 
         // get saved mail
-        String email = getIntent().getStringExtra("Key4");
+       String email = getIntent().getStringExtra("Key4");
 
 
         editTextTextPersonName5.setText(email);
-
-
 
         sreport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +48,11 @@ public class SupervisorMain extends AppCompatActivity {
         sviewreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SupervisorMain.this, RVActivity.class));
+                Intent viee = new Intent(SupervisorMain.this, RVActivity.class);
+                setResult(RESULT_OK, null);
+                viee.putExtra("Key14",email);
+                startActivity(viee);
+                SupervisorMain.this.finish();
             }
         });
 

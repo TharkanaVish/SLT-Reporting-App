@@ -1,5 +1,6 @@
 package com.example.sltreport_app;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -45,6 +46,9 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     {
         ReportVH vh = (ReportVH) holder;
         Report emp = e==null? list.get(position):e;
+
+
+
         vh.txt_name.setText(emp.getTown());
         vh.txt_position.setText(emp.getVilage());
         vh.txt_assigns.setText(emp.getSuperViser());

@@ -44,8 +44,12 @@ public class SVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, Report e)
     {
+
+
         ReportVH vh = (ReportVH) holder;
         Report emp = e==null? list.get(position):e;
+
+
         vh.txt_name.setText(emp.getTown());
         vh.txt_position.setText(emp.getVilage());
         vh.txt_assigns.setText(emp.getSuperViser());
@@ -80,6 +84,7 @@ public class SVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             });
             popupMenu.show();
         });
+
     }
 
     @Override

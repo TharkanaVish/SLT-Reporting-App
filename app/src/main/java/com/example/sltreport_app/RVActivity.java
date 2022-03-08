@@ -24,9 +24,15 @@ public class RVActivity extends AppCompatActivity {
     DAOEmployee dao;
     boolean isLoading=false;
     String key =null;
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_rv);
         swipeRefreshLayout = findViewById(R.id.swip);
         recyclerView = findViewById(R.id.rv);
@@ -37,6 +43,7 @@ public class RVActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         dao = new DAOEmployee();
         loadData();
+
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener()
         {
             @Override

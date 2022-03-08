@@ -2,6 +2,7 @@ package com.example.sltreport_app;
 
         import androidx.appcompat.app.AppCompatActivity;
 
+        import android.content.Intent;
         import android.os.Bundle;
         import androidx.annotation.NonNull;
         import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ package com.example.sltreport_app;
         import com.google.firebase.database.ValueEventListener;
 
         import java.util.ArrayList;
+
 public class SVActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
@@ -36,7 +38,6 @@ public class SVActivity extends AppCompatActivity {
         adapter= new SVAdapter(this);
         recyclerView.setAdapter(adapter);
         dao = new DAOEmployee();
-        String email = getIntent().getStringExtra("Key4");
 
 
         loadData();
@@ -59,6 +60,11 @@ public class SVActivity extends AppCompatActivity {
             }
         });
     }
+
+     String email = getIntent().getStringExtra("Key13");
+
+
+
 
     private void loadData()
     {
